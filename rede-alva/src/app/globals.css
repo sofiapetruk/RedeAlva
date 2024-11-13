@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  @apply scroll-smooth;
+}
+
+.cabecalho {
+    @apply flex flex-col md:flex-row justify-center md:justify-around bg-customGreen text-white items-center text-lg md:text-2xl p-4;
+
+    & .logo{
+        @apply text-xl md:text-3xl font-serif italic font-bold;
+    }
+    & .menu{
+        @apply flex flex-col md:flex-row items-center;
+    
+        & li{
+            @apply p-2 md:p-4;
+        }
+    }
+}
+

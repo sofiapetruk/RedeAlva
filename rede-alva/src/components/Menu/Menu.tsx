@@ -1,7 +1,7 @@
 export default function Menu () {
     return (
-        <nav className="menu">
-            <ul>
+        <nav>
+            <ul className="menu">
                 <li>HOME</li>
                 <li>SOBRE</li>
                 <li>CONTATO</li>
