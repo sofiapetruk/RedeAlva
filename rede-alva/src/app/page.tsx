@@ -92,7 +92,7 @@ export default function Home () {
           height={100}
           alt="Escritório"
           />
-          <p>
+          <p className="paragrafo">
             Loradipiscing elit, sed do eiusmod tempor incididunt ut.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Home () {
           height={100}
           alt="Casa"
           />
-          <p>
+          <p className="paragrafo">
             Loradipiscing elit, sed do eiusmod tempor incididunt ut.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Home () {
           height={100}
           alt="Escritório"
           />
-          <p>
+          <p className="paragrafo">
             Loradipiscing elit, sed do eiusmod tempor incididunt ut.
           </p>
         </div>
