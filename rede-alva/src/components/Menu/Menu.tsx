@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Menu () {
+
     return (
         <nav>
             <ul className="menu">
@@ -14,7 +15,11 @@ export default function Menu () {
                         HOME
                     </Link>
                 </li>
-                <li>CONTATO</li>
+                <li>
+                    <Link href="/comunidades">
+                        COMUNIDADE
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
