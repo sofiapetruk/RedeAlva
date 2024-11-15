@@ -1,9 +1,9 @@
 import Image from "next/image";
-import redesolar from "@/app/img/redesolar.png"
-import painel from "@/app/img/painelSolar.png"
-import escritorio from "@/app/img/escritorio.png"
-import casa from "@/app/img/casa.png"
-import check from "@/app/img/Check.png"
+import redesolar from "@/img/redesolar.png"
+import painel from "@/img/painelSolar.png"
+import escritorio from "@/img/escritorio.png"
+import casa from "@/img/casa.png"
+import check from "@/img/Check.png"
 
 export default function Home () {
   return (
