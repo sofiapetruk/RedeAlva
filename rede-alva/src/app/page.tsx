@@ -22,7 +22,7 @@ export default function Home () {
           </p>
         </div>
       </div>
-      <div className="sobre">
+      <div className="sobre" id="sobre">
         <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
         <h1 className="titulo">
           MICRO<span>RREDES</span>
