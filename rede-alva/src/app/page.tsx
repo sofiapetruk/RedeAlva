@@ -3,6 +3,7 @@ import redesolar from "@/app/img/redesolar.png"
 import painel from "@/app/img/painelSolar.png"
 import escritorio from "@/app/img/escritorio.png"
 import casa from "@/app/img/casa.png"
+import check from "@/app/img/Check.png"
 
 export default function Home () {
   return (
@@ -32,20 +33,56 @@ export default function Home () {
         <div className="microrredes">
           <Image 
           src={painel}
-          width={500}
-          height={500}
+          width={700}
+          height={700}
           alt="Painel solar"
           />
           <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+            <li>
+              <Image
+              src={check}
+              width={30}
+              height={30}
+              alt="Check"
+              
+              />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+            <li>
+            <Image
+              src={check}
+              width={30}
+              height={30}
+              alt="Check"
+              />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+            <li>
+            <Image
+              src={check}
+              width={30}
+              height={30}
+              alt="Check"
+              />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+            <li>
+            <Image
+              src={check}
+              width={30}
+              height={30}
+              alt="Check"
+              />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+            <li>
+            <Image
+              src={check}
+              width={30}
+              height={30}
+              alt="Check"
+              />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
           </ul>
-          <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
+          
         </div>
-
+        <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
       </div>
       <div className="cards">
         <div className="card">

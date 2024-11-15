@@ -12,6 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customGreen: "#2C5B61",
+        customGreenLight: "#4B8464",
       },
     },
   },

@@ -22,3 +22,43 @@
     }
 }
 
+.servicos {
+    @apply bg-customGreen flex flex-auto justify-around items-center;
+
+    & .titulo{
+        @apply text-2xl md:text-4xl font-bold text-white p-4 text-right;
+    }
+
+    & .paragrafo{
+        @apply text-xl md:text-2xl text-white p-2  text-right;
+    }
+}
+
+.sobre{
+    @apply w-[90%] m-auto mt-[3em];
+
+    & .solucoes{
+        @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4;
+    }
+
+    & .titulo{
+        @apply text-6xl font-bold text-customGreen;
+
+        & span{
+            @apply text-customGreenLight;
+        }
+    }
+
+    & .paragrafo {
+        @apply text-xl md:text-2xl pt-2 pb-2;
+    }
+
+    & .microrredes {
+        @apply flex flex-auto m-auto items-center justify-between;
+        
+        & ul li{
+            @apply flex flex-row p-5;
+            
+        }
+    }
+}
