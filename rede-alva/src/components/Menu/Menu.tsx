@@ -1,9 +1,19 @@
+import Link from "next/link";
+
 export default function Menu () {
     return (
-        <nav className="menu">
-            <ul>
-                <li>HOME</li>
-                <li>SOBRE</li>
+        <nav>
+            <ul className="menu">
+                <li>
+                    <Link href="/">
+                        HOME
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/#sobre">
+                        HOME
+                    </Link>
+                </li>
                 <li>CONTATO</li>
             </ul>
         </nav>
