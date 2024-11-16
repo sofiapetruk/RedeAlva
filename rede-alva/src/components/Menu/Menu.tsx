@@ -16,8 +16,13 @@ export default function Menu () {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/comunidades">
+                    <Link href="/comunidades/cad-comunidades">
                         COMUNIDADE
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/comunidades">
+                        ADMINISTRAÇÃO
                     </Link>
                 </li>
             </ul>
