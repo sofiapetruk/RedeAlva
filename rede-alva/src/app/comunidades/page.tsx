@@ -70,7 +70,7 @@ export default function Comunidades() {
                             <td className="p-4 text-white">{comunidade.totalEnergia}</td>
                             <td className="p-4 text-white flex justify-evenly items-center w-full h-full">
                 
-                                <Link href={`/comunidades/editar/${comunidade.idComunidade}`}>
+                                <Link href={`/comunidades/edit-comunidade/${comunidade.idComunidade}`}>
                                     <span className="hover:scale-125 cursor-pointer transition-all duration-300">
                                         <BiEdit size={30} color="#4300ff" />
                                     </span>
