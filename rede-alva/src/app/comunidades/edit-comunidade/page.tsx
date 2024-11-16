@@ -1,8 +1,8 @@
 "use client";
 
-import { TipoComunidade } from "@/types/types";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { TipoComunidade } from "@/types/types";
 
 export default function EditComunidade({ params }: { params: { id: number } }) {
     const navigate = useRouter(); // Redirecionamento para home
@@ -26,7 +26,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
             }
         };
         chamadaApi();
-    }, [params.id]);
+    }, []);
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evento.target;
@@ -42,17 +42,19 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    tipoComunidade: comunidade.tipoComunidade,
-                    endereco: comunidade.endereco,
-                    estado: comunidade.estado,
-                    totalEnergia: comunidade.totalEnergia
-                })
+                body: JSON.stringify(comunidade)
             });
 
             if (response.ok) {
                 alert("Comunidade atualizada com sucesso!");
-                navigate.push("/"); // Redireciona após atualização
+                setComunidade({
+                    idComunidade: 0,
+                    tipoComunidade: "",
+                    endereco: "",
+                    estado: "",
+                    totalEnergia: 0.0
+                });
+                navigate.push("/comunidades"); // Redireciona após atualização
             }
         } catch (error) {
             console.error("Falha na atualização: ", error);

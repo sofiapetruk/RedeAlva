@@ -7,7 +7,7 @@ export type TipoComunidade = {
 };
 
 export type TipoUnidade = {
-    idUnidade?:number;
+    $idUnidade?:number;
     idComunidade?:number;
     numeroUnidade?:number;
     nomeUnidade:string;
@@ -17,7 +17,7 @@ export type TipoUnidade = {
 }
 
 export type TipoComercio = {
-    idComercio?:number;
+    $idComercio?:number;
     idComunidade:number;
     unidadeVedendoraId: number;
     unidadeCompradoraId:number;
@@ -29,7 +29,7 @@ export type TipoComercio = {
 }
 
 export type TipoArmazenamento = {
-    idArmazenamento?:number;
+    $idArmazenamento?:number;
     idComunidade:number;
     idUnidade:number;
     tipoGeracao:string;
@@ -37,7 +37,7 @@ export type TipoArmazenamento = {
 }
 
 export type TipoUser = {
-    idCadastro:number;
+    $idCadastro:number;
     user:string;
     email:string;
     senha:string;

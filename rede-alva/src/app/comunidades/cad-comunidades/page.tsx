@@ -28,12 +28,7 @@ export default function CadComunidades() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    tipoComunidade: comunidade.tipoComunidade,
-                    endereco: comunidade.endereco,
-                    estado: comunidade.estado,
-                    totalEnergia: comunidade.totalEnergia
-                })
+                body: JSON.stringify(comunidade)
             });
 
             if (response.ok) {
