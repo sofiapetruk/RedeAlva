@@ -55,54 +55,31 @@ export default function CadComunidades() {
         <div>
             <h2>CADASTRO DE COMUNIDADE</h2>
             <form onSubmit={handleSubmit}>
+                
                 <div>
                     <label htmlFor="idTipo">Tipo da comunidade</label>
-                    <input
-                        type="text"
-                        name="tipoComunidade"
-                        id="idTipo"
-                        value={comunidade.tipoComunidade}
-                        onChange={handleChange}
-                        placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)"
-                        required
-                    />
+                    <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange} 
+                        placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required/>
                 </div>
+
                 <div>
                     <label htmlFor="idEnd">Endereço</label>
-                    <input
-                        type="text"
-                        name="endereco"
-                        id="idEnd"
-                        value={comunidade.endereco}
-                        onChange={handleChange}
-                        placeholder="endereço da comunidade"
-                        required
-                    />
+                    <input type="text"name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
+                        placeholder="endereço da comunidade" required/>
                 </div>
+
                 <div>
                     <label htmlFor="idEst">Estado</label>
-                    <input
-                        type="text"
-                        name="estado"
-                        id="idEst"
-                        value={comunidade.estado}
-                        onChange={handleChange}
-                        placeholder="estado da comunidade"
-                        required
-                    />
+                    <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
+                        placeholder="estado da comunidade" required/>
                 </div>
+
                 <div>
                     <label htmlFor="idEnergia">Total de energia</label>
-                    <input
-                        type="number"
-                        name="totalEnergia"
-                        id="idEnergia"
-                        value={comunidade.totalEnergia}
-                        onChange={handleChange}
-                        placeholder="total de energia do microgrid, caso houver"
-                        required
-                    />
+                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia} onChange={handleChange}
+                        placeholder="total de energia do microgrid, caso houver" required/>
                 </div>
+
                 <div>
                     <button type="submit">REGISTRAR</button>
                 </div>

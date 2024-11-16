@@ -12,7 +12,7 @@ export default function Menu () {
                 </li>
                 <li>
                     <Link href="/#sobre">
-                        HOME
+                        SOBRE
                     </Link>
                 </li>
                 <li>
