@@ -17,7 +17,7 @@ export type TipoUnidade = {
 }
 
 export type TipoComercio = {
-    $idComercio?:number;
+    idComercio?:number;
     idComunidade:number;
     unidadeVedendoraId: number;
     unidadeCompradoraId:number;
@@ -25,7 +25,7 @@ export type TipoComercio = {
     quantidade:number;
     saldoVendedor?:number;
     saldoComprador?:number;
-    dataHora:string;
+    dataHora?:string;
 }
 
 export type TipoArmazenamento = {
