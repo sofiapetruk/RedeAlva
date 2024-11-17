@@ -53,7 +53,7 @@ export default function CadComunidades() {
             <h2>CADASTRO DE COMERCIO</h2>
             <form onSubmit={handleSubmit}>
                 
-            <div>
+                <div>
                     <label htmlFor="idCom">ID Comunidade</label>
                     <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
                     placeholder="digite o id da sua comunidade" required/>
