@@ -29,11 +29,11 @@ export type TipoComercio = {
 }
 
 export type TipoArmazenamento = {
-    $idArmazenamento?:number;
+    idArmazenamento?:number;
     idComunidade:number;
     idUnidade:number;
     tipoGeracao:string;
-    quantidade:string;
+    quantidade:number;
 }
 
 export type TipoUser = {

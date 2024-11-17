@@ -78,7 +78,7 @@ export default function CadComunidades() {
                         <input type="radio" name="tipoTransacao" id="idTransacaoVenda" value="venda" checked={comercio.tipoTransacao === "venda"} onChange={handleChange}/>
 
                         <label htmlFor="idTransacaoCompra"> COMPRA </label>
-                        <input type="radio" name="tipoTransacao" id="idTransacaoCompra" checked={comercio.tipoTransacao === "compra"} onChange={handleChange} />
+                        <input type="radio" name="tipoTransacao" id="idTransacaoCompra" value="compra" checked={comercio.tipoTransacao === "compra"} onChange={handleChange} />
                     </fieldset>
                 </div>
 
