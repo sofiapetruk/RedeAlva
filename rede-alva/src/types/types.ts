@@ -7,7 +7,7 @@ export type TipoComunidade = {
 };
 
 export type TipoUnidade = {
-    $idUnidade?:number;
+    idUnidade?:number;
     idComunidade?:number;
     numeroUnidade?:number;
     nomeUnidade:string;
