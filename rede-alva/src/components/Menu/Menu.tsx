@@ -20,6 +20,14 @@ export default function Menu () {
                         COMUNIDADE
                     </Link>
                 </li>
+
+                <li>
+                    <Link href="/unidades/cad-comercios">
+                        COMERCIO
+                    </Link>
+                </li>
+
+
                 <li>
                     <Link href="/comunidades">
                         ADMINISTRAÇÃO
