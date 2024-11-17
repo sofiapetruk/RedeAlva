@@ -11,7 +11,7 @@ export default function Menu () {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/#sobre">
+                    <Link href="/unidades/cad-unidades">
                         SOBRE
                     </Link>
                 </li>

@@ -1,5 +1,7 @@
+"use client";
+
 import { TipoUnidade } from "@/types/types";
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 
@@ -60,19 +62,19 @@ export default function CadUnidades() {
                 </div>
 
                 <div>
-                    <label htmlFor="idNm">ID Comunidade</label>
+                    <label htmlFor="idNm">Nome Unidade</label>
                     <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
                     placeholder="digite o nome da sua comunidade" required/>
                 </div>
 
                 <div>
-                    <label htmlFor="idGer">ID Comunidade</label>
+                    <label htmlFor="idGer">Capacidade de Geração</label>
                     <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao} onChange={handleChange}
                     placeholder="digite quantos de kwh o seu painel solar consegue geral" required/>
                 </div>
 
                 <div>
-                    <label htmlFor="idCons">ID Comunidade</label>
+                    <label htmlFor="idCons">Capacidade Consumo</label>
                     <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo} onChange={handleChange}
                     placeholder="digite quantos de kwh conseme por mês" required/>
                 </div>
