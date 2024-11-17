@@ -25,6 +25,11 @@ export default function Menu () {
                         ADMINISTRAÇÃO
                     </Link>
                 </li>
+                <li>
+                    <Link href="/unidades">
+                        ADMINISTRAÇÃO
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
