@@ -63,35 +63,35 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
 
     return (
         <div className="bg-[#011625] rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} className="w-full p-6 flex flex-col gap-4 m-auto">
+            <form onSubmit={handleSubmit} >
                 <h3 className="text-white text-center text-3xl">Editar Comunidade</h3>
 
                 <div>
-                    <label className="text-xl text-primary-text font-semibold flex gap-2 items-center" htmlFor="idTipo">Tipo da comunidade</label>
+                    <label htmlFor="idTipo">Tipo da comunidade</label>
                     <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange}
-                        placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required className="p-2 rounded-sm outline-none text-[#000]" />
+                        placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required/>
                 </div>
 
                 <div>
-                    <label className="text-xl text-primary-text font-semibold flex gap-2 items-center" htmlFor="idEnd">Endereço</label>
+                    <label htmlFor="idEnd">Endereço</label>
                     <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
-                        placeholder="endereço da comunidade" required className="p-2 rounded-sm outline-none text-[#000]" />
+                        placeholder="endereço da comunidade" required/>
                 </div>
 
                 <div>
-                    <label className="text-xl text-primary-text font-semibold flex gap-2 items-center" htmlFor="idEst">Estado</label>
+                    <label htmlFor="idEst">Estado</label>
                     <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
-                        placeholder="estado da comunidade" required className="p-2 rounded-sm outline-none text-[#000]" />
+                        placeholder="estado da comunidade" required/>
                 </div>
 
                 <div>
-                    <label className="text-xl text-primary-text font-semibold flex gap-2 items-center" htmlFor="idEnergia">Total de energia</label>
+                    <label htmlFor="idEnergia">Total de energia</label>
                     <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia} onChange={handleChange}
-                        placeholder="total de energia do microgrid, caso houver" required className="p-2 rounded-sm outline-none text-[#000]" />
+                        placeholder="total de energia do microgrid, caso houver" required/>
                 </div>
 
                 <div>
-                    <button type="submit" className="group flex gap-2 items-center p-5 justify-between w-1/8 m-auto bg-[#ec4899] hover:text-white hover:shadow-md hover:scale-110 shadow-gray-300 rounded-sm transition-all duration-300">Atualizar</button>
+                    <button type="submit">Atualizar</button>
                 </div>
             </form>
         </div>

@@ -12,7 +12,7 @@ export default function Menu () {
                 </li>
                 <li>
                     <Link href="/unidades/cad-unidades">
-                        SOBRE
+                        UNIDADE
                     </Link>
                 </li>
                 <li>
