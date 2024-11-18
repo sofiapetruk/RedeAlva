@@ -62,9 +62,9 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="bg-[#011625] rounded-xl p-6 flex flex-col gap-4 m-auto">
+        <div className=" rounded-xl p-6 flex flex-col gap-4 m-auto">
             <form onSubmit={handleSubmit} >
-                <h3 className="text-white text-center text-3xl">Editar Comunidade</h3>
+                <h3 className="text-black text-center text-3xl">Editar Comunidade</h3>
 
                 <div>
                     <label htmlFor="idTipo">Tipo da comunidade</label>

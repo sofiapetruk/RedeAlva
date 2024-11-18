@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
+import Unidades from "../unidades/page";
 
 
 export default function Comunidades() {
@@ -89,6 +90,8 @@ export default function Comunidades() {
                     </tfoot>
                 </table>
             )}
+            <Unidades/>
         </div>
+        
     );
 }

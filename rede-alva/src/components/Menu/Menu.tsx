@@ -22,7 +22,7 @@ export default function Menu () {
                 </li>
 
                 <li>
-                    <Link href="/unidades/cad-comercios">
+                    <Link href="/comercios/cad-comercios">
                         COMERCIO
                     </Link>
                 </li>
@@ -30,11 +30,6 @@ export default function Menu () {
 
                 <li>
                     <Link href="/comunidades">
-                        ADMINISTRAÇÃO
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/unidades">
                         ADMINISTRAÇÃO
                     </Link>
                 </li>
