@@ -29,7 +29,7 @@ export default function Menu () {
 
 
                 <li>
-                    <Link href="/comunidades">
+                    <Link href="/administracao">
                         ADMINISTRAÇÃO
                     </Link>
                 </li>

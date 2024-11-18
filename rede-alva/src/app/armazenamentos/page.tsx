@@ -8,7 +8,7 @@ import { MdDelete } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
 
 
-export default function Comunidades() {
+export default function Armazenamento() {
     const navigate = useRouter(); // redirecionamento para home
 
     const [armazenamentos, setArmazenamentos] = useState<TipoArmazenamento[]>([]); // chamar a lista
@@ -45,7 +45,7 @@ export default function Comunidades() {
 
     return (
         <div className="p-4">
-            <h1 className="text-3xl font-bold mb-6">Comunidades</h1>
+            <h1 className="text-3xl font-bold mb-6">Armazenamento</h1>
             {armazenamentos.length === 0 ? (
                 <p className="text-red-500">Nenhuma comunidade encontrada.</p>
             ) : (
@@ -65,6 +65,7 @@ export default function Comunidades() {
                             <tr key={armazenamento.idArmazenamento} className="hover:bg-[#004a7d] transition-all duration-300">
                                 <td className="p-4 text-white">{armazenamento.idArmazenamento}</td>
                                 <td className="p-4 text-white">{armazenamento.idComunidade}</td>
+                                <td className="p-4 text-white">{armazenamento.idUnidade}</td>
                                 <td className="p-4 text-white">{armazenamento.tipoGeracao}</td>
                                 <td className="p-4 text-white">{armazenamento.quantidade}</td>
                                 <td className="p-4 text-white flex justify-evenly items-center w-full h-full">
@@ -83,7 +84,7 @@ export default function Comunidades() {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colSpan={6} className="p-4 text-white text-center">Total de armazenamentos: {armazenamentos.length}</td>
+                            <td colSpan={6} className="p-4 text-black text-center">Total de armazenamentos: {armazenamentos.length}</td>
                         </tr>
                     </tfoot>
                 </table>

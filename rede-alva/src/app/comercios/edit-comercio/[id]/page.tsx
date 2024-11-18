@@ -64,9 +64,9 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="bg-[#011625] rounded-xl p-6 flex flex-col gap-4 m-auto">
+        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
             <form onSubmit={handleSubmit} >
-                <h3 className="text-white text-center text-3xl">Editar Comercio</h3>
+                <h3 className="text-black text-center text-3xl">Editar Comercio</h3>
 
                 <div>
                     <label htmlFor="idCom">ID Comunidade</label>
@@ -93,7 +93,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                         <input type="radio" name="tipoTransacao" id="idTransacaoVenda" value="venda" checked={comercio.tipoTransacao === "venda"} onChange={handleChange}/>
 
                         <label htmlFor="idTransacaoCompra"> COMPRA </label>
-                        <input type="radio" name="tipoTransacao" id="idTransacaoCompra" checked={comercio.tipoTransacao === "compra"} onChange={handleChange} />
+                        <input type="radio" name="tipoTransacao" id="idTransacaoCompra" value="compra" checked={comercio.tipoTransacao === "compra"} onChange={handleChange} />
                     </fieldset>
                 </div>
 

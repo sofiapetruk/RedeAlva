@@ -90,7 +90,6 @@ export default function Comunidades() {
                     </tfoot>
                 </table>
             )}
-            <Unidades/>
         </div>
         
     );
