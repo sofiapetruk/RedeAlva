@@ -85,7 +85,7 @@ export default function Comunidades() {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colSpan={6} className="p-4 text-white text-center">Total de comunidades: {comunidades.length}</td>
+                            <td colSpan={6} className="p-4 text-black text-center">Total de comunidades: {comunidades.length}</td>
                         </tr>
                     </tfoot>
                 </table>

@@ -5,7 +5,7 @@ import Unidades from "../unidades/page";
 
 export default function Administracao () {
     return (
-        <div className="container">
+        <div className="p-4 flex flex-col">
             <Comunidades/>
             <Unidades/>
             <Comercios/>
