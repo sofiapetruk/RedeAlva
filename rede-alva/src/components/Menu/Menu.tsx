@@ -11,19 +11,8 @@ export default function Menu () {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/unidades/cad-unidades">
-                        UNIDADE
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/comunidades/cad-comunidades">
-                        COMUNIDADE
-                    </Link>
-                </li>
-
-                <li>
-                    <Link href="/comercios/cad-comercios">
-                        COMERCIO
+                    <Link href="/cadastro">
+                        CADASTRO
                     </Link>
                 </li>
 

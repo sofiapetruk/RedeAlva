@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Rodape from "@/components/Rodape/Rodape";
+import { AuthProvider } from "./context/AuthContext";
+
 
 
 export const metadata: Metadata = {
@@ -18,7 +20,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <Cabecalho/>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+                
         <Rodape/>
       </body>
     </html>
