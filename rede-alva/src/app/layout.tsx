@@ -23,7 +23,6 @@ export default function RootLayout({
         <AuthProvider>
           {children}
         </AuthProvider>
-                
         <Rodape/>
       </body>
     </html>

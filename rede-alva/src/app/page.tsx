@@ -4,6 +4,8 @@ import painel from "@/img/painelSolar.png"
 import escritorio from "@/img/escritorio.png"
 import casa from "@/img/casa.png"
 import check from "@/img/Check.png"
+import paineis from "@/img/paineis.png"
+import Link from "next/link";
 
 export default function Home () {
   return (
@@ -118,6 +120,30 @@ export default function Home () {
             Loradipiscing elit, sed do eiusmod tempor incididunt ut.
           </p>
         </div>
+      </div>
+      <div className="simular">
+        <div className="conteudo">
+          <h1>
+            FAÇA UMA SIMULAÇÃO AGORA E DESCUBRA SE É A SOLUÇÃO IDEAL PRA SUA COMUNIDADE!
+          </h1>
+          <p>
+            Será um prazer ter você conosco!
+          </p>
+          <button className="cadastro-btn">
+            <Link href="/cadastro">
+              CLIQUE AQUI
+            </Link>
+          </button>
+        </div>
+        <div>
+          <Image
+            src={paineis}
+            width={500}
+            height={500}
+            alt="Casa"
+          />
+        </div>
+
       </div>
     </div>
   )

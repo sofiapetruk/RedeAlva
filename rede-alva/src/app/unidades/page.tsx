@@ -1,7 +1,6 @@
 "use client";
 
 import { TipoUnidade } from "@/types/types";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
@@ -9,7 +8,7 @@ import { BiEdit } from "react-icons/bi";
 
 
 export default function Unidades() {
-    const navigate = useRouter(); 
+  
 
     const [unidades, setUnidades] = useState<TipoUnidade[]>([]); 
 

@@ -75,8 +75,68 @@
     }
 }
 
+.simular {
+    @apply w-[80%] bg-customGreenLight rounded-2xl m-auto mt-[3em] p-4 flex flex-auto justify-around items-center mb-[3em];
+
+    & .conteudo {
+        @apply w-[50%] text-white;
+        
+        & h1{
+            @apply text-3xl font-bold p-2;
+        }
+
+        & p{
+            @apply text-xl p-2;
+        }
+
+        & .cadastro-btn{
+            @apply p-4 bg-customGreen rounded-xl font-bold;
+        }
+    }
+
+}
+
+.container-login{
+    @apply flex flex-auto;
+
+    & .info-login{
+        @apply bg-customGreen text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+
+        & h1{
+            @apply text-5xl font-bold p-4;
+        }
+
+        & p{
+            @apply w-[40%] text-center p-4;
+        }
+
+        & .cadastro-btn{
+            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold;
+        }
+    }
+
+    & .form-login{
+        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+
+        & h1{
+            @apply text-5xl font-bold p-4 text-customGreen;
+        }
+
+        & form{
+            @apply flex flex-col justify-center
+        }
+        input {
+            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
+        }
+
+        & .submit-btn {
+            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
 .rodape{
-    @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around mt-[5em];
+    @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around;
     
     & ul{
         @apply text-white text-lg font-bold flex flex-row;

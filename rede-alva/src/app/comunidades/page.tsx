@@ -1,16 +1,14 @@
 "use client";
 
 import { TipoComunidade } from "@/types/types";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
-import Unidades from "../unidades/page";
 
 
 export default function Comunidades() {
-    const navigate = useRouter(); // redirecionamento para home
+
 
     const [comunidades, setComunidades] = useState<TipoComunidade[]>([]); // chamar a lista
 

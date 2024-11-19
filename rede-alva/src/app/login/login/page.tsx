@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useAuth } from '@/app/context/AuthContext';
+import Link from 'next/link';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -13,50 +14,46 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
         <div className="container-login">
-            <div className="w-full max-w-md p-8 space-y-4 bg-white rounded shadow-lg">
-                <h2 className="text-2xl font-bold text-center">Login</h2>
-                <form onSubmit={handleLogin} className="space-y-4">
-                <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email
-                    </label>
-                    <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-500"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                    Senha
-                    </label>
-                    <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-500"
-                    />
-                </div>
-                <button
-                    type="submit"
-                    className="w-full py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
-                >
-                    Entrar
-                </button>
-                </form>
-                <p className="text-center text-sm text-gray-600">
-                    Não tem uma conta? <a href="/login/cadastro" className="text-indigo-600 hover:underline">Cadastre-se</a>
+            <div className="info-login">
+                <h1>
+                    Seja bem vindo!
+                </h1>
+                <p>
+                    Caso não possua uma conta, faça seu cadastro clicando no botão abaixo
                 </p>
+                <button className='cadastro-btn'>
+                    <Link href="/login/cadastro">Cadastrar</Link>
+                </button>
+            </div>
+            <div className="form-login">
+                <h1>LOGIN</h1>
+                <form onSubmit={handleLogin} className="form">
+                    <div>
+                        <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        placeholder='Email'
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        />
+                    </div>
+                    <div>
+                        <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        placeholder='Senha'
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        />
+                    </div>
+                    <button type="submit" className='submit-btn'>
+                        Entrar
+                    </button>
+                </form>
             </div>
         </div>
-      
-    </div>
   );
 }
