@@ -130,7 +130,46 @@
         }
 
         & .submit-btn {
-            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+            @apply px-8 py-2 bg-customGreen rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.container-cadastro{
+    @apply flex flex-auto;
+
+    & .info-login{
+        @apply bg-customGreen text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+
+        & h1{
+            @apply text-5xl font-bold p-4;
+        }
+
+        & p{
+            @apply w-[40%] text-center p-4;
+        }
+
+        & .cadastro-btn{
+            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold;
+        }
+    }
+
+    & .form-login{
+        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+
+        & h1{
+            @apply text-5xl font-bold p-4 text-customGreen;
+        }
+
+        & form{
+            @apply flex flex-col justify-center
+        }
+        input {
+            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
+        }
+
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreen rounded-xl font-bold text-center m-auto;
         }
     }
 }
