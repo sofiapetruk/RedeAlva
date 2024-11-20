@@ -37,7 +37,7 @@ export type TipoArmazenamento = {
 }
 
 export type TipoUser = {
-    $idCadastro:number;
+    idCadastro?:number;
     user:string;
     email:string;
     senha:string;
