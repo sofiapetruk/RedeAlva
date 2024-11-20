@@ -11,12 +11,17 @@ export default function CadComunidades() {
         tipoComunidade: "",
         endereco: "",
         estado: "",
-        totalEnergia: 0.0
+        totalEnergia: null
     });
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evento.target;
-        setComunidade({ ...comunidade, [name]: value });
+
+        // Se o campo for 'totalEnergia' e estiver vazio, define como null. Caso contrário, define como número.
+        setComunidade({ 
+            ...comunidade, 
+            [name]: name === "totalEnergia" && value === "" ? null : (name === "totalEnergia" ? parseFloat(value) : value)
+        });
     };
 
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +42,7 @@ export default function CadComunidades() {
                     tipoComunidade: "",
                     endereco: "",
                     estado: "",
-                    totalEnergia: 0.0
+                    totalEnergia: null
                 });
                 navigate.push("/"); // Redireciona após cadastro
             }
@@ -59,7 +64,7 @@ export default function CadComunidades() {
 
                 <div>
                     <label htmlFor="idEnd">Endereço</label>
-                    <input type="text"name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
+                    <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
                         placeholder="endereço da comunidade" required/>
                 </div>
 
@@ -71,8 +76,8 @@ export default function CadComunidades() {
 
                 <div>
                     <label htmlFor="idEnergia">Total de energia</label>
-                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia} onChange={handleChange}
-                        placeholder="total de energia do microgrid, caso houver" required/>
+                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
+                        placeholder="total de energia do microgrid, caso houver"/>
                 </div>
 
                 <div>
@@ -82,4 +87,3 @@ export default function CadComunidades() {
         </div>
     );
 }
-

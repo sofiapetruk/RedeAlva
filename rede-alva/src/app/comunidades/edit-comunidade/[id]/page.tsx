@@ -12,7 +12,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
         tipoComunidade: "",
         endereco: "",
         estado: "",
-        totalEnergia: 0.0
+        totalEnergia: null
     });
 
     useEffect(() => {
@@ -26,11 +26,15 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
             }
         };
         chamadaApi();
-    }, []);
+    }, [params.id]);
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evento.target;
-        setComunidade({ ...comunidade, [name]: value });
+
+        setComunidade({ 
+            ...comunidade, 
+            [name]: name === "totalEnergia" && value === "" ? null : (name === "totalEnergia" ? parseFloat(value) : value)
+        });
     };
 
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
@@ -52,9 +56,9 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     tipoComunidade: "",
                     endereco: "",
                     estado: "",
-                    totalEnergia: 0.0
+                    totalEnergia: null
                 });
-                navigate.push("/comunidades"); // Redireciona após atualização
+                navigate.push("/administracao"); // Redireciona após atualização
             }
         } catch (error) {
             console.error("Falha na atualização: ", error);
@@ -62,8 +66,8 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className=" rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} >
+        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
+            <form onSubmit={handleSubmit}>
                 <h3 className="text-black text-center text-3xl">Editar Comunidade</h3>
 
                 <div>
@@ -86,8 +90,8 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
 
                 <div>
                     <label htmlFor="idEnergia">Total de energia</label>
-                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia} onChange={handleChange}
-                        placeholder="total de energia do microgrid, caso houver" required/>
+                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
+                        placeholder="total de energia do microgrid, caso houver"/>
                 </div>
 
                 <div>
