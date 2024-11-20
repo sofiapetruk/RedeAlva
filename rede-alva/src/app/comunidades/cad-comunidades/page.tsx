@@ -44,7 +44,7 @@ export default function CadComunidades() {
                     estado: "",
                     totalEnergia: null
                 });
-                navigate.push("/"); // Redireciona após cadastro
+                navigate.push("/administracao"); // Redireciona após cadastro
             }
         } catch (error) {
             console.error("Falha no cadastro: ", error);

@@ -28,9 +28,18 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     }, []);
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = evento.target;
-        setUnidade({...unidade, [name]: value});
+        const { name, value } = evento.target;
+    
+        setUnidade({ 
+            ...unidade, 
+            [name]: (name === "capacidadeGeracao" || name === "capacidadeConsumo") && value === "" 
+                ? null 
+                : ( name === "capacidadeGeracao" || name === "capacidadeConsumo") 
+                    ? parseFloat(value) 
+                    : value
+        });
     };
+    
 
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
@@ -79,14 +88,14 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
 
                 <div>
                     <label htmlFor="idGer">Capacidade de Geração</label>
-                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao} onChange={handleChange}
-                    placeholder="digite quantos de kwh o seu painel solar consegue geral" required/>
+                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh o seu painel solar consegue geral"/>
                 </div>
 
                 <div>
                     <label htmlFor="idCons">Capacidade Consumo</label>
-                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo} onChange={handleChange}
-                    placeholder="digite quantos de kwh conseme por mês" required/>
+                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh conseme por mês"/>
                 </div>
                 <div>
                     <button type="submit">Atualizar</button>

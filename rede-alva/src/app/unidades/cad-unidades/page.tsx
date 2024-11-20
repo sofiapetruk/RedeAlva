@@ -12,14 +12,23 @@ export default function CadUnidades() {
     const [unidade, setUnidade] = useState<TipoUnidade>({
         idComunidade: 0,
         nomeUnidade:"",
-        capacidadeGeracao: 0.0,
-        capacidadeConsumo: 0.0
+        capacidadeGeracao: null,
+        capacidadeConsumo: null
     });
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = evento.target;
-        setUnidade({...unidade, [name]: value});
+        const { name, value } = evento.target;
+    
+        setUnidade({ 
+            ...unidade, 
+            [name]: (name === "capacidadeGeracao" || name === "capacidadeConsumo") && value === "" 
+                ? null 
+                : ( name === "capacidadeGeracao" || name === "capacidadeConsumo") 
+                    ? parseFloat(value) 
+                    : value
+        });
     };
+    
 
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
@@ -41,7 +50,7 @@ export default function CadUnidades() {
                     capacidadeGeracao: 0.0,
                     capacidadeConsumo: 0.0
                 });
-                navigate.push("/"); // Redireciona após cadastro
+                navigate.push("/administracao"); // Redireciona após cadastro
             }
         } catch (error) {
             console.error("Falha no cadastro: ", error);
@@ -69,14 +78,14 @@ export default function CadUnidades() {
 
                 <div>
                     <label htmlFor="idGer">Capacidade de Geração</label>
-                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao} onChange={handleChange}
-                    placeholder="digite quantos de kwh o seu painel solar consegue geral" required/>
+                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh o seu painel solar consegue geral"/>
                 </div>
 
                 <div>
                     <label htmlFor="idCons">Capacidade Consumo</label>
-                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo} onChange={handleChange}
-                    placeholder="digite quantos de kwh conseme por mês" required/>
+                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh conseme por mês"/>
                 </div>
 
                 <div>

@@ -11,9 +11,9 @@ export type TipoUnidade = {
     idComunidade?:number;
     numeroUnidade?:number;
     nomeUnidade:string;
-    capacidadeGeracao?:number;
-    capacidadeConsumo?:number;
-    saldoEnergia?:number;
+    capacidadeGeracao?:number | null;
+    capacidadeConsumo?:number | null;
+    saldoEnergia?:number| null;
 }
 
 export type TipoComercio = {
