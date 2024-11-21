@@ -62,7 +62,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     capacidadeGeracao: null,
                     capacidadeConsumo: null
                 });
-                navigate.push("/unidades"); // Redireciona após atualização
+                navigate.push("/administracao"); // Redireciona após atualização
             }
         } catch (error) {
             console.error("Falha na atualização: ", error);

@@ -39,7 +39,7 @@ export default function CadComunidades() {
                     tipoGeracao: "",
                     quantidade: 0.0
                 });
-                navigate.push("/"); // Redireciona após cadastro
+                navigate.push("/comercio"); // Redireciona após cadastro
             }
         } catch (error) {
             console.error("Falha no armazenamento: ", error);

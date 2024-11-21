@@ -54,7 +54,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     unidadeCompradoraId: 0,
                     quantidade: 0
                 });
-                navigate.push("/comercios"); 
+                navigate.push("/administracao"); 
             }
         } catch (error) {
             console.error("Falha na atualização: ", error);

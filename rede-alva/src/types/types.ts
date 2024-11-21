@@ -33,6 +33,7 @@ export type TipoArmazenamento = {
     idUnidade:number;
     tipoGeracao:string;
     quantidade:number;
+    dataHora?:string;
 }
 
 export type TipoUser = {

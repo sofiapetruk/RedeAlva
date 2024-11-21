@@ -57,6 +57,7 @@ export default function Armazenamento() {
                             <th className="p-4 text-white">ID unidade</th>
                             <th className="p-4 text-white">Tipo Geração</th>
                             <th className="p-4 text-white">Quantidade</th>
+                            <th className="p-4 text-white">Data</th>
                             <th className="p-4 text-white">Ações</th>
                         </tr>
                     </thead>
@@ -68,6 +69,7 @@ export default function Armazenamento() {
                                 <td className="p-4 text-white">{armazenamento.idUnidade}</td>
                                 <td className="p-4 text-white">{armazenamento.tipoGeracao}</td>
                                 <td className="p-4 text-white">{armazenamento.quantidade}</td>
+                                <td className="p-4 text-white">{armazenamento.dataHora}</td>
                                 <td className="p-4 text-white flex justify-evenly items-center w-full h-full">
                             
                                     <Link href={`/armazenamentos/edit-armazenamento/${armazenamento.idArmazenamento}`}>
