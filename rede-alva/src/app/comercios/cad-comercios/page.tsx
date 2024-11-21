@@ -39,7 +39,7 @@ export default function CadComunidades() {
                     unidadeCompradoraId: 0,
                     quantidade: 0
                 });
-                navigate.push("/"); 
+                navigate.push("/comercio"); 
             }
         } catch (error) {
             console.error("Falha no comercio: ", error);

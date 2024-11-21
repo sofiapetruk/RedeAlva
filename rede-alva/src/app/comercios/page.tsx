@@ -56,8 +56,8 @@ export default function Comercios() {
                             <th className="p-4 text-white">ID comunidade</th>
                             <th className="p-4 text-white">ID da unidade vendedora</th>
                             <th className="p-4 text-white">ID da unidade compradora</th>
-                            <th className="p-4 text-white">Tipo transação</th>
                             <th className="p-4 text-white">Quantidade KwH</th>
+                            <th className="p-4 text-white">Data</th>
                             <th className="p-4 text-white">Ações</th>
                         </tr>
                     </thead>
@@ -68,8 +68,8 @@ export default function Comercios() {
                                 <td className="p-4 text-white">{comercio.idComunidade}</td>
                                 <td className="p-4 text-white">{comercio.unidadeVedendoraId}</td>
                                 <td className="p-4 text-white">{comercio.unidadeCompradoraId}</td>
-                                <td className="p-4 text-white">{comercio.tipoTransacao}</td>
                                 <td className="p-4 text-white">{comercio.quantidade}</td>
+                                <td className="p-4 text-white">{comercio.dataHora}</td>
                                 <td className="p-4 text-white flex justify-evenly items-center w-full h-full">
                             
                                     <Link href={`/comercios/edit-comercio/${comercio.idComercio}`}>
