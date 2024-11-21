@@ -11,9 +11,16 @@ export default function Menu () {
                         HOME
                     </Link>
                 </li>
+
                 <li>
                     <Link href="/cadastro">
                         CADASTRO
+                    </Link>
+                </li>
+
+                <li>
+                    <Link href="/comercio">
+                        COMÉRCIO
                     </Link>
                 </li>
 
