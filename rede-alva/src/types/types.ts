@@ -21,7 +21,6 @@ export type TipoComercio = {
     idComunidade:number;
     unidadeVedendoraId: number;
     unidadeCompradoraId:number;
-    tipoTransacao:string;
     quantidade:number;
     saldoVendedor?:number;
     saldoComprador?:number;

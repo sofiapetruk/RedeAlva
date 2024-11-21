@@ -12,7 +12,6 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
         idComunidade: 0,
         unidadeVedendoraId: 0,
         unidadeCompradoraId: 0,
-        tipoTransacao: "",
         quantidade: 0
     });
 
@@ -53,7 +52,6 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     idComunidade: 0,
                     unidadeVedendoraId: 0,
                     unidadeCompradoraId: 0,
-                    tipoTransacao: "",
                     quantidade: 0
                 });
                 navigate.push("/comercios"); 
@@ -85,17 +83,6 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                         placeholder="digite o id da unidade compradora" required/>
                 </div>
 
-                <div>
-                    <fieldset>
-                        <legend>Tipo de Transação</legend>
-
-                        <label htmlFor="idTransacaoVenda"> VENDA </label>
-                        <input type="radio" name="tipoTransacao" id="idTransacaoVenda" value="venda" checked={comercio.tipoTransacao === "venda"} onChange={handleChange}/>
-
-                        <label htmlFor="idTransacaoCompra"> COMPRA </label>
-                        <input type="radio" name="tipoTransacao" id="idTransacaoCompra" value="compra" checked={comercio.tipoTransacao === "compra"} onChange={handleChange} />
-                    </fieldset>
-                </div>
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
