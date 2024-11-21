@@ -47,8 +47,8 @@ export default function CadUnidades() {
                 setUnidade({
                     idComunidade: 0,
                     nomeUnidade:"",
-                    capacidadeGeracao: 0.0,
-                    capacidadeConsumo: 0.0
+                    capacidadeGeracao: null,
+                    capacidadeConsumo: null
                 });
                 navigate.push("/administracao"); // Redireciona após cadastro
             }

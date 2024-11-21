@@ -11,8 +11,8 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
         idUnidade: 0,
         idComunidade: 0,
         nomeUnidade:"",
-        capacidadeGeracao: 0.0,
-        capacidadeConsumo: 0.0
+        capacidadeGeracao: null,
+        capacidadeConsumo: null
     });
     useEffect(() => {
         const chamadaApi = async () => {
@@ -59,8 +59,8 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     idUnidade: 0,
                     idComunidade: 0,
                     nomeUnidade:"",
-                    capacidadeGeracao: 0.0,
-                    capacidadeConsumo: 0.0
+                    capacidadeGeracao: null,
+                    capacidadeConsumo: null
                 });
                 navigate.push("/unidades"); // Redireciona após atualização
             }
