@@ -8,21 +8,26 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const { login } = useAuth();
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        login();
+        try {
+            await login(email, password); 
+        } catch (error) {
+            console.error('Erro no login:', error);
+            alert('Falha no login. Verifique suas credenciais e tente novamente.');
+        }
     };
 
     return (
         <div className="container-login">
             <div className="info-login">
                 <h1>
-                    Seja bem vindo!
+                    Seja bem-vindo!
                 </h1>
                 <p>
-                    Caso não possua uma conta, faça seu cadastro clicando no botão abaixo
+                    Caso não possua uma conta, faça seu cadastro clicando no botão abaixo.
                 </p>
-                <button className='cadastro-btn'>
+                <button className="cadastro-btn">
                     <Link href="/login/cadastro">Cadastrar</Link>
                 </button>
             </div>
@@ -34,7 +39,7 @@ export default function Login() {
                             type="email"
                             id="email"
                             value={email}
-                            placeholder='Email'
+                            placeholder="Email"
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
@@ -44,12 +49,12 @@ export default function Login() {
                             type="password"
                             id="password"
                             value={password}
-                            placeholder='Senha'
+                            placeholder="Senha"
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
-                    <button type="submit" className='submit-btn'>
+                    <button type="submit" className="submit-btn">
                         Entrar
                     </button>
                 </form>
