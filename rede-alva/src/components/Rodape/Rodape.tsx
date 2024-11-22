@@ -1,13 +1,14 @@
+import Image from 'next/image';
+import Logo from "@/img/logo.png"
+
+
 export default function Rodape () {
     return (
         <footer className="rodape">
-            <nav>
-                <ul>
-                    <li>Carlos Eduardo Rabelo Souza</li>
-                    <li>Sofia Andrade Petruk</li>
-                    <li>Julia Monteiro</li>
-                </ul>
-            </nav>
+            <div className="integrante">
+              <Image src={Logo} alt="Carlos Eduardo" className="imagem" width={200}
+                height={200} />
+            </div>
         </footer>
     )
 }

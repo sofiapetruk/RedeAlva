@@ -23,9 +23,9 @@ export default function Home () {
           alt="Uma mulher na frente da casa com painel solar e turbina eólica"
         />
         <div className="texto">
-          <h1 className="titulo">SERVIÇOS SOLARES</h1>
+          <h1 className="titulo">SERVIÇOS DE REDE</h1>
           <p className="paragrafo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          A SOLUÇÃO IDEAL PARA SUA COMUNIDADE.
           </p>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default function Home () {
           MICRO<span>RREDES</span>
         </h1>
         <p className="paragrafo">
-          Por que optar por elas?
+          O que são e por que optar por elas?
         </p>
         <div className="microrredes">
           <Image 
@@ -52,7 +52,7 @@ export default function Home () {
                 height={30}
                 alt="Check"
               />
-              Microrredes são sistemas locais de geração, armazenamento e distribuição de energia que podem operar independentes ou conectados à rede elétrica principal, garantindo fornecimento contínuo.
+              Microrredes são sistemas locais de energia que operam de forma independente ou conectados à rede, garantindo fornecimento contínuo.
             </li>
             <li>
               <Image
@@ -98,8 +98,8 @@ export default function Home () {
         <div className="card">
           <Image
           src={escritorio}
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Escritório"
           />
           <p className="paragrafo">
@@ -109,8 +109,8 @@ export default function Home () {
         <div className="card">
           <Image
           src={casa}
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Casa"
           />
           <p className="paragrafo">
@@ -120,8 +120,8 @@ export default function Home () {
         <div className="card">
           <Image
           src={escritorio}
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Escritório"
           />
           <p className="paragrafo">
