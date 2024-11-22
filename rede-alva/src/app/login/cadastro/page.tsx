@@ -49,7 +49,7 @@ export default function Cadastro() {
             senha: '',
             date: '',
           });
-          login();
+          await login(user.email, user.senha);
           navigate.push('/');
         } else {
           alert(`Erro no cadastro: ${data.message || 'Verifique os dados informados.'}`);
