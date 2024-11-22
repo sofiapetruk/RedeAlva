@@ -3,10 +3,8 @@
 import { TipoUnidade } from "@/types/types";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import ftcomunidade from "@/img/comunidade.png"
-import check from "@/img/checkcad.png"
+import ftcomunidade from "@/img/comunidade.png";
 import Image from "next/image";
-
 
 export default function CadUnidades() {
     const navigate = useRouter();
@@ -15,7 +13,7 @@ export default function CadUnidades() {
         idComunidade: 0,
         nomeUnidade: "",
         capacidadeGeracao: null,
-        capacidadeConsumo: null
+        capacidadeConsumo: null,
     });
 
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -26,13 +24,13 @@ export default function CadUnidades() {
         if (name === "capacidadeGeracao" || name === "capacidadeConsumo") {
             if (value === "" || /^[0-9]*$/.test(value)) {
                 setUnidade({ ...unidade, [name]: value === "" ? null : parseFloat(value) });
-                setErrors({ ...errors, [name]: "" }); // Limpa o erro se o valor for válido
+                setErrors({ ...errors, [name]: "" }); // Limpa erro se valor for válido
             } else {
-                setErrors({ ...errors, [name]: `${name === "capacidadeGeracao" ? "Capacidade de geração" : "Capacidade de consumo"} deve ser um número.` });
+                setErrors({ ...errors, [name]: `${name === "capacidadeGeracao" ? "Capacidade de geração" : "Capacidade de consumo"} deve ser um número válido.` });
             }
         } else {
             setUnidade({ ...unidade, [name]: value });
-            setErrors({ ...errors, [name]: "" }); // Limpa o erro ao alterar o campo
+            setErrors({ ...errors, [name]: "" }); // Limpa erro ao alterar o campo
         }
     };
 
@@ -43,7 +41,7 @@ export default function CadUnidades() {
             newErrors.idComunidade = "O ID da comunidade é obrigatório.";
         }
 
-        if (!unidade.nomeUnidade) {
+        if (!unidade.nomeUnidade.trim()) {
             newErrors.nomeUnidade = "O nome da unidade é obrigatório.";
         }
 
@@ -54,17 +52,15 @@ export default function CadUnidades() {
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
 
-        if (!validateInputs()) {
-            return;
-        }
+        if (!validateInputs()) return;
 
         try {
             const response = await fetch("http://localhost:8080/unidade", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(unidade)
+                body: JSON.stringify(unidade),
             });
 
             if (response.ok) {
@@ -73,7 +69,7 @@ export default function CadUnidades() {
                     idComunidade: 0,
                     nomeUnidade: "",
                     capacidadeGeracao: null,
-                    capacidadeConsumo: null
+                    capacidadeConsumo: null,
                 });
                 navigate.push("/administracao"); // Redireciona após cadastro
             } else {
@@ -81,7 +77,7 @@ export default function CadUnidades() {
                 alert("Erro ao cadastrar unidade: " + errorMessage);
             }
         } catch (error) {
-            console.error("Falha no cadastro: ", error);
+            console.error("Falha no cadastro:", error);
             alert("Erro no servidor. Tente novamente mais tarde.");
         }
     };
@@ -89,54 +85,79 @@ export default function CadUnidades() {
     return (
         <div className="main-unidades">
             <h1 className="titulo">
-                    <span>1</span> Comunidade <span>2</span> Unidade
-                </h1>
+                <span>1</span> Comunidade <span>2</span> Unidade
+            </h1>
             <div className="container-unidade">
                 <div className="info-unidade">
-                    <h1>INSIRA AS INFORMAÇÕES NO FORMULÁRIO PARA CADASTRAR SUA COMUNIDADE</h1>
-                    <Image 
-                    src={ftcomunidade}
-                    height={500}
-                    width={500}
-                    alt="Comunidade"
-                    />
+                    <h1>Insira as informações no formulário para cadastrar sua comunidade</h1>
+                    <Image src={ftcomunidade} height={500} width={500} alt="Comunidade" />
                 </div>
-            
+
                 <div className="form-unidades">
-                    <h1>CADASTRO UNIDADE</h1>
+                    <h1>Cadastro Unidade</h1>
                     <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="idCom">ID Comunidade</label>
+                            <input
+                                type="number"
+                                name="idComunidade"
+                                id="idCom"
+                                value={unidade.idComunidade}
+                                onChange={handleChange}
+                                placeholder="Digite o ID da sua comunidade"
+                                required
+                            />
+                            {errors.idComunidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.idComunidade}</p>}
+                        </div>
 
-                            <div>
-                                <label htmlFor="idCom">ID Comunidade</label>
-                                <input type="number" name="idComunidade" id="idCom" value={unidade.idComunidade} onChange={handleChange}
-                                placeholder="digite o id da sua comunidade" required/>
-                            </div>
+                        <div>
+                            <label htmlFor="idNm">Nome Unidade</label>
+                            <input
+                                type="text"
+                                name="nomeUnidade"
+                                id="idNm"
+                                value={unidade.nomeUnidade}
+                                onChange={handleChange}
+                                placeholder="Nome da Unidade"
+                                required
+                            />
+                            {errors.nomeUnidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.nomeUnidade}</p>}
+                        </div>
 
-                            <div>
-                                <label htmlFor="idNm">Nome Unidade</label>
-                                <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
-                                placeholder="Nome da Unidade" required/>
-                            </div>
+                        <div>
+                            <label htmlFor="idGer">Capacidade de Geração</label>
+                            <input
+                                type="number"
+                                name="capacidadeGeracao"
+                                id="idGer"
+                                value={unidade.capacidadeGeracao ?? ""}
+                                onChange={handleChange}
+                                placeholder="Capacidade de geração"
+                            />
+                            {errors.capacidadeGeracao && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeGeracao}</p>}
+                        </div>
 
-                            <div>
-                                <label htmlFor="idGer">Capacidade de Geração</label>
-                                <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
-                                placeholder="Capacidade de geração"/>
-                            </div>
+                        <div>
+                            <label htmlFor="idCons">Capacidade Consumo</label>
+                            <input
+                                type="number"
+                                name="capacidadeConsumo"
+                                id="idCons"
+                                value={unidade.capacidadeConsumo ?? ""}
+                                onChange={handleChange}
+                                placeholder="Consumo de energia por kw/h"
+                            />
+                            {errors.capacidadeConsumo && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeConsumo}</p>}
+                        </div>
 
-                            <div>
-                                <label htmlFor="idCons">Capacidade Consumo</label>
-                                <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
-                                placeholder="Consumo de energia por kw/h"/>
-                            </div>
-
-                            <div>
-                                <button type="submit" className="submit-btn">REGISTRAR</button>
-                            </div>
-
-                        </form>
+                        <div>
+                            <button type="submit" className="submit-btn">
+                                Registrar
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     );
 }

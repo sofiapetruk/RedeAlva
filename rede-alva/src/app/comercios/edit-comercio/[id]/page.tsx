@@ -5,35 +5,38 @@ import { useEffect, useState } from "react";
 import { TipoComercio } from "@/types/types";
 
 export default function EditComercio({ params }: { params: { id: number } }) {
-    const navigate = useRouter(); // Redirecionamento para home
+    const navigate = useRouter();
 
     const [comercio, setComercio] = useState<TipoComercio>({
         idComercio: 0,
         idComunidade: 0,
         unidadeVedendoraId: 0,
         unidadeCompradoraId: 0,
-        quantidade: 0
+        quantidade: 0,
     });
 
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
     useEffect(() => {
-        const chamadaApi = async () => {
+        const fetchData = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/distribuicao/${params.id}`);
+                if (!response.ok) {
+                    throw new Error("Erro ao buscar dados do comércio.");
+                }
                 const data = await response.json();
                 setComercio(data);
             } catch (error) {
                 console.error("Erro ao buscar dados do comércio:", error);
             }
         };
-        chamadaApi();
+        fetchData();
     }, [params.id]);
 
-    const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = evento.target;
-        setComercio({ ...comercio, [name]: value });
-        setErrors({ ...errors, [name]: "" }); // Limpa o erro ao alterar o campo
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setComercio({ ...comercio, [name]: Number(value) });
+        setErrors({ ...errors, [name]: "" });
     };
 
     const validateInputs = (): boolean => {
@@ -52,10 +55,10 @@ export default function EditComercio({ params }: { params: { id: number } }) {
         }
 
         if (comercio.unidadeVedendoraId === comercio.unidadeCompradoraId) {
-            newErrors.unidadeCompradoraId = "A unidade vendedora e compradora não podem ser a mesma.";
+            newErrors.unidadeCompradoraId = "A unidade vendedora e compradora não podem ser iguais.";
         }
 
-        if (comercio.quantidade <= 0) {
+        if (!comercio.quantidade || comercio.quantidade <= 0) {
             newErrors.quantidade = "A quantidade de energia deve ser maior que zero.";
         }
 
@@ -63,31 +66,27 @@ export default function EditComercio({ params }: { params: { id: number } }) {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
-        evento.preventDefault();
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
 
-        if (!validateInputs()) {
-            return;
-        }
+        if (!validateInputs()) return;
 
         try {
             const response = await fetch(`http://localhost:8080/distribuicao/${params.id}`, {
                 method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(comercio)
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(comercio),
             });
 
             if (response.ok) {
                 alert("Comércio atualizado com sucesso!");
-                navigate.push("/administracao"); // Redireciona após atualização
+                navigate.push("/administracao");
             } else {
                 const errorMessage = await response.text();
                 alert("Erro ao atualizar comércio: " + errorMessage);
             }
         } catch (error) {
-            console.error("Falha na atualização: ", error);
+            console.error("Falha na atualização:", error);
             alert("Erro no servidor. Tente novamente mais tarde.");
         }
     };
@@ -95,36 +94,81 @@ export default function EditComercio({ params }: { params: { id: number } }) {
     return (
         <div className="container-edit">
             <div className="form-edit">
-            <h1 className="titulo">Editar Comercio</h1>
-                <form onSubmit={handleSubmit} >
-                    <div>
-                        <label htmlFor="idCom">ID Comunidade</label>
-                        <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
-                        placeholder="digite o id da sua comunidade" required/>
+                <h1 className="titulo">Editar Comércio</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="idComunidade">ID Comunidade</label>
+                        <input
+                            type="number"
+                            name="idComunidade"
+                            id="idComunidade"
+                            value={comercio.idComunidade || ""}
+                            onChange={handleChange}
+                            placeholder="Digite o ID da comunidade"
+                        />
+                        {errors.idComunidade && (
+                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                                {errors.idComunidade}
+                            </p>
+                        )}
                     </div>
-                    <div>
-                        <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
-                        <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
-                            placeholder="digite o id da unidade vendedora" required/>
+
+                    <div className="form-group">
+                        <label htmlFor="unidadeVedendoraId">ID Unidade Vendedora</label>
+                        <input
+                            type="number"
+                            name="unidadeVedendoraId"
+                            id="unidadeVedendoraId"
+                            value={comercio.unidadeVedendoraId || ""}
+                            onChange={handleChange}
+                            placeholder="Digite o ID da unidade vendedora"
+                        />
+                        {errors.unidadeVedendoraId && (
+                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                                {errors.unidadeVedendoraId}
+                            </p>
+                        )}
                     </div>
 
-                <div>
-                    <label htmlFor="idCompradora">ID da Unidade Compradora</label>
-                    <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
-                        placeholder="digite o id da unidade compradora" required/>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="unidadeCompradoraId">ID Unidade Compradora</label>
+                        <input
+                            type="number"
+                            name="unidadeCompradoraId"
+                            id="unidadeCompradoraId"
+                            value={comercio.unidadeCompradoraId || ""}
+                            onChange={handleChange}
+                            placeholder="Digite o ID da unidade compradora"
+                        />
+                        {errors.unidadeCompradoraId && (
+                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                                {errors.unidadeCompradoraId}
+                            </p>
+                        )}
+                    </div>
 
+                    <div className="form-group">
+                        <label htmlFor="quantidade">Quantidade de Energia</label>
+                        <input
+                            type="number"
+                            name="quantidade"
+                            id="quantidade"
+                            value={comercio.quantidade || ""}
+                            onChange={handleChange}
+                            placeholder="Digite a quantidade a ser trocada"
+                        />
+                        {errors.quantidade && (
+                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                                {errors.quantidade}
+                            </p>
+                        )}
+                    </div>
 
-                <div>
-                    <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
-                        placeholder="digite a quantidade que irá ser trocada" required/>
-                </div>
-                
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+                    <div className="form-group">
+                        <button type="submit">Atualizar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

@@ -1,56 +1,26 @@
 "use client";
 
-import { TipoArmazenamento } from "@/types/types";
+import { TipoArmazenamento, TipoComunidade } from "@/types/types";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-export default function CadArmazenamento() {
+export default function CadComunidades() {
     const navigate = useRouter(); // Redirecionamento para home
 
-    const [armazenamento, setArmazenamento] = useState<TipoArmazenamento>({
+    const [armazenamneto, setArmazenamneto] = useState<TipoArmazenamento>({
         idComunidade: 0,
         idUnidade: 0,
         tipoGeracao: "",
         quantidade: 0.0
     });
 
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evento.target;
-        setArmazenamento({ ...armazenamento, [name]: value });
-        setErrors({ ...errors, [name]: "" }); // Limpa o erro ao alterar o campo
-    };
-
-    const validateInputs = (): boolean => {
-        const newErrors: { [key: string]: string } = {};
-
-        if (!armazenamento.idComunidade) {
-            newErrors.idComunidade = "O ID da comunidade é obrigatório.";
-        }
-
-        if (!armazenamento.idUnidade) {
-            newErrors.idUnidade = "O ID da unidade é obrigatório.";
-        }
-
-        if (!armazenamento.tipoGeracao) {
-            newErrors.tipoGeracao = "O tipo de transação é obrigatório.";
-        }
-
-        if (armazenamento.quantidade <= 0) {
-            newErrors.quantidade = "A quantidade de energia deve ser maior que zero.";
-        }
-
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        setArmazenamneto({ ...armazenamneto, [name]: value });
     };
 
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
-
-        if (!validateInputs()) {
-            return;
-        }
 
         try {
             const response = await fetch("http://localhost:8080/armazenamento", {
@@ -58,101 +28,57 @@ export default function CadArmazenamento() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(armazenamento)
+                body: JSON.stringify(armazenamneto)
             });
 
             if (response.ok) {
-                alert("Armazenamento cadastrado com sucesso!");
-                setArmazenamento({
+                alert("Comunidade cadastrada com sucesso!");
+                setArmazenamneto({
                     idComunidade: 0,
                     idUnidade: 0,
                     tipoGeracao: "",
                     quantidade: 0.0
                 });
                 navigate.push("/comercio"); // Redireciona após cadastro
-            } else {
-                const errorMessage = await response.text();
-                alert("Erro ao cadastrar armazenamento: " + errorMessage);
             }
         } catch (error) {
             console.error("Falha no armazenamento: ", error);
-            alert("Erro no servidor. Tente novamente mais tarde.");
         }
     };
 
     return (
         <div>
-            <h2>CADASTRO DE ARMAZENAMENTO</h2>
+            <h2>CADASTRO DE COMUNIDADE</h2>
             <form onSubmit={handleSubmit}>
+                
                 <div>
                     <label htmlFor="idCom">ID Comunidade</label>
-                    <input 
-                        type="number" 
-                        name="idComunidade" 
-                        id="idCom" 
-                        value={armazenamento.idComunidade} 
-                        onChange={handleChange}
-                        placeholder="Digite o ID da sua comunidade" 
-                        required
-                    />
-                    {errors.idComunidade && <p style={{ color: "red" }}>{errors.idComunidade}</p>}
+                    <input type="number" name="idComunidade" id="idCom" value={armazenamneto.idComunidade} onChange={handleChange}
+                    placeholder="digite o id da sua comunidade" required/>
                 </div>
 
                 <div>
                     <label htmlFor="idUnidade">ID da Unidade</label>
-                    <input 
-                        type="number" 
-                        name="idUnidade" 
-                        id="idUnidade" 
-                        value={armazenamento.idUnidade} 
-                        onChange={handleChange}
-                        placeholder="Digite o ID da unidade que deseja transferir a energia" 
-                        required
-                    />
-                    {errors.idUnidade && <p style={{ color: "red" }}>{errors.idUnidade}</p>}
+                    <input type="number" name="idUnidade" id="idUnidade" value={armazenamneto.idUnidade} onChange={handleChange}
+                        placeholder="digite o id da unidade que deseja transferir a energia" required/>
                 </div>
 
                 <div>
                     <fieldset>
                         <legend>Tipo de Transação</legend>
 
-                        <label htmlFor="idTransacaoDar">Dar</label>
-                        <input 
-                            type="radio" 
-                            name="tipoGeracao" 
-                            id="idTransacaoDar" 
-                            value="dar" 
-                            checked={armazenamento.tipoGeracao === "dar"} 
-                            onChange={handleChange} 
-                            required
-                        />
+                        <label htmlFor="idTransacaoVenda"> dar </label>
+                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamneto.tipoGeracao === "dar"} onChange={handleChange}/>
 
-                        <label htmlFor="idTransacaoPegar">Pegar</label>
-                        <input 
-                            type="radio" 
-                            name="tipoGeracao" 
-                            id="idTransacaoPegar" 
-                            value="pegar" 
-                            checked={armazenamento.tipoGeracao === "pegar"} 
-                            onChange={handleChange} 
-                            required
-                        />
-                        {errors.tipoGeracao && <p style={{ color: "red" }}>{errors.tipoGeracao}</p>}
+                        <label htmlFor="idTransacaoCompra"> pegar </label>
+                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamneto.tipoGeracao === "pegar"} onChange={handleChange} />
                     </fieldset>
                 </div>
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input 
-                        type="number" 
-                        name="quantidade" 
-                        id="idQtd" 
-                        value={armazenamento.quantidade} 
-                        onChange={handleChange}
-                        placeholder="Digite a quantidade que irá ser trocada" 
-                        required
-                    />
-                    {errors.quantidade && <p style={{ color: "red" }}>{errors.quantidade}</p>}
+                    <input type="number" name="quantidade" id="idQtd" value={armazenamneto.quantidade} onChange={handleChange}
+                        placeholder="digite a quantidade que irá ser trocada" required/>
                 </div>
 
                 <div>

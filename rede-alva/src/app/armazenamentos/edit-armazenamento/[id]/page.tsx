@@ -97,13 +97,13 @@ export default function EditArmazenamento({ params }: { params: { id: number } }
 
                 <div>
                     <label htmlFor="idCom">ID Comunidade</label>
-                    <input type="number" name="idComunidade" id="idCom" value={armazenamneto.idComunidade} onChange={handleChange}
+                    <input type="number" name="idComunidade" id="idCom" value={armazenamento.idComunidade} onChange={handleChange}
                     placeholder="digite o id da sua comunidade" required/>
                 </div>
 
                 <div>
                     <label htmlFor="idUnidade">ID da Unidade</label>
-                    <input type="number" name="idUnidade" id="idUnidade" value={armazenamneto.idUnidade} onChange={handleChange}
+                    <input type="number" name="idUnidade" id="idUnidade" value={armazenamento.idUnidade} onChange={handleChange}
                         placeholder="digite o id da unidade que deseja transferir a energia" required/>
                 </div>
 
@@ -112,16 +112,16 @@ export default function EditArmazenamento({ params }: { params: { id: number } }
                         <legend>Tipo de Transação</legend>
 
                         <label htmlFor="idTransacaoVenda"> dar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamneto.tipoGeracao === "dar"} onChange={handleChange}/>
+                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamento.tipoGeracao === "dar"} onChange={handleChange}/>
 
                         <label htmlFor="idTransacaoCompra"> pegar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamneto.tipoGeracao === "pegar"} onChange={handleChange} />
+                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamento.tipoGeracao === "pegar"} onChange={handleChange} />
                     </fieldset>
                 </div>
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={armazenamneto.quantidade} onChange={handleChange}
+                    <input type="number" name="quantidade" id="idQtd" value={armazenamento.quantidade} onChange={handleChange}
                         placeholder="digite a quantidade que irá ser trocada" required/>
                 </div>
 
@@ -131,6 +131,5 @@ export default function EditArmazenamento({ params }: { params: { id: number } }
                 </form>
             </div>
             
-        </div>
     );
 }

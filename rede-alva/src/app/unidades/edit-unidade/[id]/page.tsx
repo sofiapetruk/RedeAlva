@@ -12,7 +12,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
         idComunidade: 0,
         nomeUnidade: "",
         capacidadeGeracao: null,
-        capacidadeConsumo: null
+        capacidadeConsumo: null,
     });
 
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -21,8 +21,12 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
         const chamadaApi = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/unidade/${params.id}`);
-                const data = await response.json();
-                setUnidade(data);
+                if (response.ok) {
+                    const data = await response.json();
+                    setUnidade(data);
+                } else {
+                    console.error("Erro ao buscar dados:", response.statusText);
+                }
             } catch (error) {
                 console.error("Erro ao buscar dados da unidade:", error);
             }
@@ -36,13 +40,16 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
         if (name === "capacidadeGeracao" || name === "capacidadeConsumo") {
             if (value === "" || /^[0-9]*$/.test(value)) {
                 setUnidade({ ...unidade, [name]: value === "" ? null : parseFloat(value) });
-                setErrors({ ...errors, [name]: "" }); // Limpa o erro se o valor for válido
+                setErrors({ ...errors, [name]: "" });
             } else {
-                setErrors({ ...errors, [name]: `${name === "capacidadeGeracao" ? "Capacidade de geração" : "Capacidade de consumo"} deve ser um número.` });
+                setErrors({
+                    ...errors,
+                    [name]: `${name === "capacidadeGeracao" ? "Capacidade de geração" : "Capacidade de consumo"} deve ser um número.`,
+                });
             }
         } else {
             setUnidade({ ...unidade, [name]: value });
-            setErrors({ ...errors, [name]: "" }); // Limpa o erro ao alterar o campo
+            setErrors({ ...errors, [name]: "" });
         }
     };
 
@@ -53,7 +60,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
             newErrors.idComunidade = "O ID da comunidade é obrigatório.";
         }
 
-        if (!unidade.nomeUnidade) {
+        if (!unidade.nomeUnidade.trim()) {
             newErrors.nomeUnidade = "O nome da unidade é obrigatório.";
         }
 
@@ -72,14 +79,14 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
             const response = await fetch(`http://localhost:8080/unidade/${params.id}`, {
                 method: "PUT",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(unidade)
+                body: JSON.stringify(unidade),
             });
 
             if (response.ok) {
                 alert("Unidade atualizada com sucesso!");
-                navigate.push("/administracao"); // Redireciona após atualização
+                navigate.push("/administracao");
             } else {
                 const errorMessage = await response.text();
                 alert("Erro ao atualizar unidade: " + errorMessage);
@@ -94,34 +101,66 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
         <div className="container-edit">
             <div className="form-edit">
                 <h1 className="titulo">Editar Unidade</h1>
-                <form onSubmit={handleSubmit} >
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="idCom">ID Comunidade</label>
-                        <input type="number" name="idComunidade" id="idCom" value={unidade.idComunidade} onChange={handleChange}
-                        placeholder="digite o id da sua comunidade" required/>
+                        <input
+                            type="number"
+                            name="idComunidade"
+                            id="idCom"
+                            value={unidade.idComunidade}
+                            onChange={handleChange}
+                            placeholder="Digite o ID da comunidade"
+                            required
+                        />
+                        {errors.idComunidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.idComunidade}</p>}
                     </div>
 
-                <div>
-                    <label htmlFor="idNm">Nome Unidade</label>
-                    <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
-                    placeholder="digite o nome da sua comunidade" required/>
-                </div>
+                    <div>
+                        <label htmlFor="idNm">Nome Unidade</label>
+                        <input
+                            type="text"
+                            name="nomeUnidade"
+                            id="idNm"
+                            value={unidade.nomeUnidade}
+                            onChange={handleChange}
+                            placeholder="Digite o nome da unidade"
+                            required
+                        />
+                        {errors.nomeUnidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.nomeUnidade}</p>}
+                    </div>
 
-                <div>
-                    <label htmlFor="idGer">Capacidade de Geração</label>
-                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
-                    placeholder="digite quantos de kwh o seu painel solar consegue geral"/>
-                </div>
+                    <div>
+                        <label htmlFor="idGer">Capacidade de Geração</label>
+                        <input
+                            type="number"
+                            name="capacidadeGeracao"
+                            id="idGer"
+                            value={unidade.capacidadeGeracao ?? ""}
+                            onChange={handleChange}
+                            placeholder="Capacidade de geração em kWh"
+                        />
+                        {errors.capacidadeGeracao && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeGeracao}</p>}
+                    </div>
 
-                <div>
-                    <label htmlFor="idCons">Capacidade Consumo</label>
-                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
-                    placeholder="digite quantos de kwh conseme por mês"/>
-                </div>
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+                    <div>
+                        <label htmlFor="idCons">Capacidade de Consumo</label>
+                        <input
+                            type="number"
+                            name="capacidadeConsumo"
+                            id="idCons"
+                            value={unidade.capacidadeConsumo ?? ""}
+                            onChange={handleChange}
+                            placeholder="Consumo mensal em kWh"
+                        />
+                        {errors.capacidadeConsumo && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeConsumo}</p>}
+                    </div>
+
+                    <div>
+                        <button type="submit" className="submit-btn">Atualizar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
