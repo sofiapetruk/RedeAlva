@@ -39,55 +39,58 @@ export default function Home () {
         </p>
         <div className="microrredes">
           <Image 
-          src={painel}
-          width={700}
-          height={700}
-          alt="Painel solar"
+            src={painel}
+            width={700}
+            height={700}
+            alt="Painel solar"
           />
           <ul>
             <li>
               <Image
-              src={check}
-              width={30}
-              height={30}
-              alt="Check"
-              
+                src={check}
+                width={30}
+                height={30}
+                alt="Check"
               />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+              Microrredes são sistemas locais de geração, armazenamento e distribuição de energia que podem operar independentes ou conectados à rede elétrica principal, garantindo fornecimento contínuo.
+            </li>
             <li>
-            <Image
-              src={check}
-              width={30}
-              height={30}
-              alt="Check"
+              <Image
+                src={check}
+                width={30}
+                height={30}
+                alt="Check"
               />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+              Elas oferecem resiliência ao permitir que comunidades continuem a funcionar durante falhas de energia na rede principal, essencial em áreas vulneráveis a desastres naturais.
+            </li>
             <li>
-            <Image
-              src={check}
-              width={30}
-              height={30}
-              alt="Check"
+              <Image
+                src={check}
+                width={30}
+                height={30}
+                alt="Check"
               />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+              Microrredes aproveitam fontes renováveis, como solar e eólica, para fornecer energia mais eficiente e sustentável, reduzindo a dependência de combustíveis fósseis.
+            </li>
             <li>
-            <Image
-              src={check}
-              width={30}
-              height={30}
-              alt="Check"
+              <Image
+                src={check}
+                width={30}
+                height={30}
+                alt="Check"
               />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+              Elas podem reduzir custos energéticos locais, minimizando perdas de transmissão e oferecendo uma solução mais econômica a longo prazo.
+            </li>
             <li>
-            <Image
-              src={check}
-              width={30}
-              height={30}
-              alt="Check"
+              <Image
+                src={check}
+                width={30}
+                height={30}
+                alt="Check"
               />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+              São uma solução viável para levar energia a comunidades isoladas, promovendo inclusão energética e melhorando a qualidade de vida em regiões sem acesso à rede elétrica.
+            </li>
           </ul>
-          
         </div>
         <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
       </div>
@@ -149,6 +152,7 @@ export default function Home () {
           />
         </div>
       </div>
+      <p className="info_integrantes">CONHEÇA OS INTEGRANTES</p>
         <div className="integrantes-container">
           <div className="integrante">
               <Image src={Monteiro} alt="Julia Monteiro" className="imagem" width={200}

@@ -53,16 +53,30 @@
         @apply text-xl md:text-2xl pt-2 pb-2;
     }
 
-    & .microrredes {
-        @apply flex flex-auto m-auto items-center justify-between;
-        
-        & ul li{
-            @apply flex flex-row md:p-5;
-
-        }
+    .microrredes {
+        @apply flex flex-row m-auto items-start justify-between;
+        flex-wrap: wrap; /* Permite que a imagem do painel e a lista se ajustem em diferentes tamanhos de tela */
+    }
+    
+    .microrredes img {
+        max-width: 100%;
+    }
+    
+    .microrredes ul {
+        @apply flex flex-col gap-3 ml-8; /* Espaçamento à esquerda para o texto */
+        max-width: 500px; /* Limita o tamanho máximo da lista para que ela não se estique demais */
+    }
+    
+    .microrredes ul li {
+        @apply flex flex-row items-center; /* Alinha imagem de check e texto horizontalmente */
+        gap: 1rem; /* Espaço entre a imagem e o texto */
+    }
+    
+    .microrredes ul li img {
+        width: 30px; /* Tamanho fixo para a imagem de check */
+        height: 30px; /* Tamanho fixo */
     }
 }
-
 .cards {
     @apply bg-customGreen flex flex-col md:flex-row items-center justify-center h-[1200px] md:h-[400px] mt-[3em];
 
