@@ -277,16 +277,16 @@
 }
 
 .integrantes{
-    @apply w-[80%] m-auto rounded-2xl p-4 bg-gray-200;
+    @apply w-[80%] m-auto mb-[3em] rounded-2xl p-4 bg-gray-200;
 
     & .cards {
-        @apply bg-gray-200 flex flex-col md:flex-row items-center justify-center;
+        @apply bg-gray-200 flex flex-col md:flex-row items-center justify-center m-auto;
     
         & .card {
             @apply w-[300px] h-[400px] m-auto bg-white rounded-3xl shadow-md flex flex-col items-center justify-center;
             
             & .infos{
-                @apply flex flex-row m-auto justify-between;
+                @apply flex flex-col md:flex-row m-auto justify-between;
 
 
             }

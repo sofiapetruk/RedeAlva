@@ -6,6 +6,7 @@ import casa from "@/img/casa.png"
 import check from "@/img/Check.png"
 import paineis from "@/img/paineis.png"
 import Link from "next/link";
+import Integrantes from "@/components/integrantes/integrantes";
 
 export default function Home () {
   return (
@@ -143,8 +144,8 @@ export default function Home () {
             alt="Casa"
           />
         </div>
-
       </div>
+      <Integrantes/>
     </div>
   )
 }
