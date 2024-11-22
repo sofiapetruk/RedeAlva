@@ -3,6 +3,10 @@
 import { TipoUnidade } from "@/types/types";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import ftcomunidade from "@/img/comunidade.png"
+import check from "@/img/checkcad.png"
+import Image from "next/image";
+
 
 export default function CadUnidades() {
     const navigate = useRouter();
@@ -99,6 +103,10 @@ export default function CadUnidades() {
                     />
                     {errors.idComunidade && <p style={{ color: "red" }}>{errors.idComunidade}</p>}
                 </div>
+            
+                <div className="form-unidades">
+                    <h1>CADASTRO UNIDADE</h1>
+                        <form onSubmit={handleSubmit}>
 
                 <div>
                     <label htmlFor="idNm">Nome Unidade</label>

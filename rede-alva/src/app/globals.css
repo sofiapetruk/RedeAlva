@@ -70,7 +70,7 @@
         @apply w-[250px] h-[300px] m-auto p-4 bg-white rounded-md shadow-md flex flex-col items-center;
 
         & .paragrafo {
-            @apply m-auto text-xl
+            @apply m-auto text-xl;
         }
     }
 }
@@ -123,10 +123,10 @@
         }
 
         & form{
-            @apply flex flex-col justify-center
+            @apply flex flex-col justify-center;
         }
         input {
-            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
+            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300 text-black;
         }
 
         & .submit-btn {
@@ -162,7 +162,7 @@
         }
 
         & form{
-            @apply flex flex-col justify-center
+            @apply flex flex-col justify-center;
         }
         input {
             @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
@@ -188,7 +188,108 @@
             @apply text-xl p-2
         }
         & .botao{
-            @apply p-4 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500;
+            @apply p-3 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500;
+        }
+    }
+}
+.main-comunidade{
+    @apply bg-customGreen;
+
+    & .titulo{
+        @apply text-4xl font-bold p-4 text-white text-center flex flex-col md:flex-row items-center justify-center;
+
+        & span{
+            @apply rounded-full bg-gray-200 text-black flex justify-center items-center p-4 w-12 h-12 m-2;
+        }
+    }
+}
+
+.main-unidades{
+    @apply bg-customGreen;
+
+    & .titulo{
+        @apply text-4xl font-bold p-4 text-white text-center flex flex-col md:flex-row items-center justify-center;
+
+        & span{
+            @apply rounded-full bg-gray-200 text-black flex justify-center items-center p-4 w-12 h-12 m-2;
+        }
+    }
+}
+.container-comunidade{
+    @apply flex flex-col md:flex-row bg-customGreen;
+
+    & .info-comunidade{
+        @apply flex flex-col w-80 m-auto items-center;
+
+        & h1{
+            @apply text-white text-3xl font-bold w-80;
+        }
+    }
+
+    & .form-comunidade{
+        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & input{
+            @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.container-unidade{
+    @apply flex flex-col md:flex-row bg-customGreen;
+
+    & .info-unidade{
+        @apply flex flex-col w-80 m-auto items-center;
+
+        & h1{
+            @apply text-white text-3xl font-bold w-full;
+        }
+    }
+
+    & .form-unidades{
+        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & label{
+            @apply text-gray-600 text-lg m-2;
+        }
+        & input{
+            @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.integrantes{
+    @apply w-[80%] m-auto mb-[3em] rounded-2xl p-4 bg-gray-200;
+
+    & .cards {
+        @apply bg-gray-200 flex flex-col md:flex-row items-center justify-center m-auto;
+    
+        & .card {
+            @apply w-[300px] h-[400px] m-auto bg-white rounded-3xl shadow-md flex flex-col items-center justify-center;
+            
+            & .infos{
+                @apply flex flex-col md:flex-row m-auto justify-between;
+
+
+            }
         }
     }
 }
@@ -197,7 +298,7 @@
     @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around;
     
     & ul{
-        @apply text-white text-lg font-bold flex flex-row;
+        @apply text-white text-lg font-bold flex flex-col  md:flex-row;
 
         & li{
             @apply p-2 md:p-8;
