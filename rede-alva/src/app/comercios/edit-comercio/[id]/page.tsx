@@ -107,7 +107,7 @@ export default function EditComercio({ params }: { params: { id: number } }) {
                             placeholder="Digite o ID da comunidade"
                         />
                         {errors.idComunidade && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.idComunidade}
                             </p>
                         )}
@@ -124,7 +124,7 @@ export default function EditComercio({ params }: { params: { id: number } }) {
                             placeholder="Digite o ID da unidade vendedora"
                         />
                         {errors.unidadeVedendoraId && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.unidadeVedendoraId}
                             </p>
                         )}
@@ -141,7 +141,7 @@ export default function EditComercio({ params }: { params: { id: number } }) {
                             placeholder="Digite o ID da unidade compradora"
                         />
                         {errors.unidadeCompradoraId && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.unidadeCompradoraId}
                             </p>
                         )}
@@ -158,7 +158,7 @@ export default function EditComercio({ params }: { params: { id: number } }) {
                             placeholder="Digite a quantidade a ser trocada"
                         />
                         {errors.quantidade && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.quantidade}
                             </p>
                         )}

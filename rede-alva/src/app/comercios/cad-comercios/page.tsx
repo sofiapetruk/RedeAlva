@@ -73,7 +73,7 @@ export default function CadComunidades() {
                     unidadeCompradoraId: 0,
                     quantidade: 0
                 });
-                navigate.push("/administracao");
+                navigate.push("/comercio");
             } else {
                 const errorMessage = await response.text();
                 alert("Erro ao cadastrar comércio: " + errorMessage);
@@ -102,7 +102,7 @@ export default function CadComunidades() {
                             required
                         />
                         {errors.idComunidade && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.idComunidade}
                             </p>
                         )}
@@ -120,7 +120,7 @@ export default function CadComunidades() {
                             required
                         />
                         {errors.unidadeVedendoraId && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.unidadeVedendoraId}
                             </p>
                         )}
@@ -138,7 +138,7 @@ export default function CadComunidades() {
                             required
                         />
                         {errors.unidadeCompradoraId && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.unidadeCompradoraId}
                             </p>
                         )}
@@ -156,7 +156,7 @@ export default function CadComunidades() {
                             required
                         />
                         {errors.quantidade && (
-                            <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                            <p className="error-message">
                                 {errors.quantidade}
                             </p>
                         )}

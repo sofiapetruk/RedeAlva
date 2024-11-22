@@ -21,11 +21,6 @@ export default function Comercio() {
                     Escolha uma das opções abaixo para fazer o comércio de ENERGIA:
                 </p>
                 <div>
-                    <Link href="/comunidades/cad-comunidades">
-                        <button className='botao'>
-                            Cadastrar Comunidade
-                        </button>
-                    </Link>
                     <Link href="/comercios/cad-comercios">
                         <button className='botao'>
                             Cadastrar Comércio

@@ -71,7 +71,7 @@ export default function CadUnidades() {
                     capacidadeGeracao: null,
                     capacidadeConsumo: null,
                 });
-                navigate.push("/administracao"); // Redireciona após cadastro
+                navigate.push("/cadastro"); // Redireciona após cadastro
             } else {
                 const errorMessage = await response.text();
                 alert("Erro ao cadastrar unidade: " + errorMessage);
