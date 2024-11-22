@@ -62,38 +62,40 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} >
-                <h3 className="text-black text-center text-3xl">Editar Comercio</h3>
+        <div className="container-edit">
+            <div className="form-edit">
+            <h1 className="titulo">Editar Comercio</h1>
+                <form onSubmit={handleSubmit} >
+                    <div>
+                        <label htmlFor="idCom">ID Comunidade</label>
+                        <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
+                        placeholder="digite o id da sua comunidade" required/>
+                    </div>
+                    <div>
+                        <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
+                        <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
+                            placeholder="digite o id da unidade vendedora" required/>
+                    </div>
 
-                <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
-                    placeholder="digite o id da sua comunidade" required/>
-                </div>
-                <div>
-                    <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
-                    <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
-                        placeholder="digite o id da unidade vendedora" required/>
-                </div>
-
-                <div>
-                    <label htmlFor="idCompradora">ID da Unidade Compradora</label>
-                    <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
-                        placeholder="digite o id da unidade compradora" required/>
-                </div>
+                    <div>
+                        <label htmlFor="idCompradora">ID da Unidade Compradora</label>
+                        <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
+                            placeholder="digite o id da unidade compradora" required/>
+                    </div>
 
 
-                <div>
-                    <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
-                        placeholder="digite a quantidade que irá ser trocada" required/>
-                </div>
-                
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+                    <div>
+                        <label htmlFor="idQtd">Quantidade Energia</label>
+                        <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
+                            placeholder="digite a quantidade que irá ser trocada" required/>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" className="submit-btn">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+            
         </div>
     );
 }

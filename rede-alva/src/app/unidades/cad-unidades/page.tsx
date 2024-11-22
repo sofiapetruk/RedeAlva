@@ -66,7 +66,7 @@ export default function CadUnidades() {
     return (
         <div className="main-unidades">
             <h1 className="titulo">
-                    <span>1</span> Comunidade - <span>2</span> Unidade
+                    <span>1</span> Comunidade <span>2</span> Unidade
                 </h1>
             <div className="container-unidade">
                 <div className="info-unidade">
@@ -81,37 +81,37 @@ export default function CadUnidades() {
             
                 <div className="form-unidades">
                     <h1>CADASTRO UNIDADE</h1>
-                        <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
 
-                            <div>
-                                <label htmlFor="idCom">ID Comunidade</label>
-                                <input type="number" name="idComunidade" id="idCom" value={unidade.idComunidade} onChange={handleChange}
-                                placeholder="digite o id da sua comunidade" required/>
-                            </div>
+                        <div>
+                            <label htmlFor="idCom">ID Comunidade</label>
+                            <input type="number" name="idComunidade" id="idCom" value={unidade.idComunidade} onChange={handleChange}
+                            placeholder="digite o id da sua comunidade" required/>
+                        </div>
 
-                            <div>
-                                <label htmlFor="idNm">Nome Unidade</label>
-                                <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
-                                placeholder="Nome da Unidade" required/>
-                            </div>
+                        <div>
+                            <label htmlFor="idNm">Nome Unidade</label>
+                            <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
+                            placeholder="Nome da Unidade" required/>
+                        </div>
 
-                            <div>
-                                <label htmlFor="idGer">Capacidade de Geração</label>
-                                <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
-                                placeholder="Capacidade de geração"/>
-                            </div>
+                        <div>
+                            <label htmlFor="idGer">Capacidade de Geração</label>
+                            <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
+                            placeholder="Capacidade de geração"/>
+                        </div>
 
-                            <div>
-                                <label htmlFor="idCons">Capacidade Consumo</label>
-                                <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
-                                placeholder="Consumo de energia por kw/h"/>
-                            </div>
+                        <div>
+                            <label htmlFor="idCons">Capacidade Consumo</label>
+                            <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
+                            placeholder="Consumo de energia por kw/h"/>
+                        </div>
 
-                            <div>
-                                <button type="submit" className="submit-btn">REGISTRAR</button>
-                            </div>
+                        <div>
+                            <button type="submit" className="submit-btn">REGISTRAR</button>
+                        </div>
 
-                        </form>
+                    </form>
                 </div>
             </div>
         </div>

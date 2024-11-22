@@ -53,7 +53,7 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
                     tipoGeracao: "",
                     quantidade: 0.0
                 });
-                navigate.push("/armazenamentos"); 
+                navigate.push("/administracao"); 
             }
         } catch (error) {
             console.error("Falha na atualização: ", error);
@@ -61,44 +61,53 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} >
-                <h3 className="text-black text-center text-3xl">Editar Armazenamento</h3>
+        <div className="container-edit">
+            <div className="form-edit">
+                <h1 className="text-black text-center text-3xl">Editar Armazenamento</h1>
+                <form onSubmit={handleSubmit} >
+                    <div>
+                        <label htmlFor="idCom">ID Comunidade</label>
+                        <input type="number" name="idComunidade" id="idCom" value={armazenamneto.idComunidade} onChange={handleChange}
+                        placeholder="digite o id da sua comunidade" required/>
+                    </div>
 
-                <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input type="number" name="idComunidade" id="idCom" value={armazenamneto.idComunidade} onChange={handleChange}
-                    placeholder="digite o id da sua comunidade" required/>
-                </div>
+                    <div>
+                        <label htmlFor="idUnidade">ID da Unidade</label>
+                        <input type="number" name="idUnidade" id="idUnidade" value={armazenamneto.idUnidade} onChange={handleChange}
+                            placeholder="digite o id da unidade que deseja transferir a energia" required/>
+                    </div>
 
-                <div>
-                    <label htmlFor="idUnidade">ID da Unidade</label>
-                    <input type="number" name="idUnidade" id="idUnidade" value={armazenamneto.idUnidade} onChange={handleChange}
-                        placeholder="digite o id da unidade que deseja transferir a energia" required/>
-                </div>
+                    <div>
+                        <fieldset>
+                            <legend className="text-center font-bold text2xl">Tipo de Transação</legend>
+                            <div className="flex flex-col">
+                                <div className="opcao">
+                                    <label htmlFor="idTransacaoVenda"> dar </label>
+                                    <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamneto.tipoGeracao === "dar"} onChange={handleChange} className="m-0 p-0"/>
 
-                <div>
-                    <fieldset>
-                        <legend>Tipo de Transação</legend>
+                                </div>
+                                <div className="opcao">
+                                    <label htmlFor="idTransacaoCompra"> pegar </label>
+                                    <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamneto.tipoGeracao === "pegar"} onChange={handleChange} />
+                                </div>
 
-                        <label htmlFor="idTransacaoVenda"> dar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamneto.tipoGeracao === "dar"} onChange={handleChange}/>
+                                
+                            </div>
+                        </fieldset>
+                    </div>
 
-                        <label htmlFor="idTransacaoCompra"> pegar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamneto.tipoGeracao === "pegar"} onChange={handleChange} />
-                    </fieldset>
-                </div>
+                    <div>
+                        <label htmlFor="idQtd">Quantidade Energia</label>
+                        <input type="number" name="quantidade" id="idQtd" value={armazenamneto.quantidade} onChange={handleChange}
+                            placeholder="digite a quantidade que irá ser trocada" required/>
+                    </div>
 
-                <div>
-                    <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={armazenamneto.quantidade} onChange={handleChange}
-                        placeholder="digite a quantidade que irá ser trocada" required/>
-                </div>
-
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+                    <div>
+                        <button type="submit">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+            
         </div>
     );
 }
