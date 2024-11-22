@@ -92,7 +92,7 @@ export default function Home () {
             </li>
           </ul>
         </div>
-        <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
+        <p className="solucoes">LOCAIS INDICADOS PARA INSTALAÇÃO</p>
       </div>
       <div className="cards">
         <div className="card">
@@ -103,7 +103,7 @@ export default function Home () {
           alt="Escritório"
           />
           <p className="paragrafo">
-            Loradipiscing elit, sed do eiusmod tempor incididunt ut.
+          Áreas rurais e isoladas: Fornecem energia onde não há acesso à rede elétrica
           </p>
         </div>
         <div className="card">
@@ -114,7 +114,7 @@ export default function Home () {
           alt="Casa"
           />
           <p className="paragrafo">
-            Loradipiscing elit, sed do eiusmod tempor incididunt ut.
+          Comunidades indígenas e reservas naturais: Elas fornecem energia limpa e sustentável repsietando o ambiente
           </p>
         </div>
         <div className="card">
@@ -125,7 +125,7 @@ export default function Home () {
           alt="Escritório"
           />
           <p className="paragrafo">
-            Loradipiscing elit, sed do eiusmod tempor incididunt ut.
+          Regiões de difícil acesso: Solução econômica para lugares remotos e de difícil alcance.
           </p>
         </div>
       </div>
