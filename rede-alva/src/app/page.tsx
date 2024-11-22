@@ -178,7 +178,7 @@ export default function Home () {
               <p className="nome">Carlos Eduardo Rabelo</p>
               <p className="rm">RM:558470</p>
               <p className="curso">1TDSPH</p>
-              <a href="https://github.com/Victor-Estrella" className="github-link" target="_blank">
+              <a href="https://github.com/Carlos-Eduardo-Rabelo" className="github-link" target="_blank">
                   <Image src={Github} alt="Ícone github" className="github-icon" width={50}
             height={50} />
               </a>
