@@ -39,7 +39,7 @@ export default function CadComunidades() {
                     unidadeCompradoraId: 0,
                     quantidade: 0
                 });
-                navigate.push("/comercio"); 
+                navigate.push("/administracao"); 
             }
         } catch (error) {
             console.error("Falha no comercio: ", error);
@@ -47,37 +47,32 @@ export default function CadComunidades() {
     };
 
     return (
-        <div>
-            <h2>CADASTRO DE COMERCIO</h2>
-            <form onSubmit={handleSubmit}>
-                
-                <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
-                    placeholder="digite o id da sua comunidade" required/>
-                </div>
-                <div>
-                    <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
-                    <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
-                        placeholder="digite o id da unidade vendedora" required/>
-                </div>
+        <div className="container-comercio">
+            <h1 className="titulo">COMERCIO</h1>
+            <div className="form-comercio">
+                <h2>Insira suas informações para realizar a operação</h2>
+                <form onSubmit={handleSubmit}>
 
-                <div>
-                    <label htmlFor="idCompradora">ID da Unidade Compradora</label>
-                    <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
-                        placeholder="digite o id da unidade compradora" required/>
-                </div>
+                        <label htmlFor="idCom">ID Comunidade</label>
+                        <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
+                        placeholder="digite o id da sua comunidade" required/>
+ 
+                        <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
+                        <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
+                            placeholder="digite o id da unidade vendedora" required/>
 
-                <div>
-                    <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
-                        placeholder="digite a quantidade que irá ser trocada" required/>
-                </div>
+                        <label htmlFor="idCompradora">ID da Unidade Compradora</label>
+                        <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
+                            placeholder="digite o id da unidade compradora" required/>
 
-                <div>
-                    <button type="submit">REGISTRAR</button>
-                </div>
-            </form>
+                        <label htmlFor="idQtd">Quantidade Energia</label>
+                        <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
+                            placeholder="digite a quantidade que irá ser trocada" required/>
+
+                        <button type="submit" className="submit-btn">REGISTRAR</button>
+                </form>
+            </div>
+            
         </div>
     );
 }
