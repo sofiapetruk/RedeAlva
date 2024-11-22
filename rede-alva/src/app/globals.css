@@ -218,8 +218,13 @@
         }
     }
 }
+.info_integrantes{
+    @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
+}
 .integrantes-section {
     @apply flex flex-col items-center w-full mt-16;
+
+    
 }
 
 .titulo {
