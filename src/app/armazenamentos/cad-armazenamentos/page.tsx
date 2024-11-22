@@ -47,44 +47,62 @@ export default function CadComunidades() {
     };
 
     return (
-        <div>
-            <h2>CADASTRO DE COMUNIDADE</h2>
+        <div className="container-armazenamento">
+            <h1 className="titulo">CADASTRO DO ARMAZENAMENTO</h1>
+            <div className="form-armazenamento">
             <form onSubmit={handleSubmit}>
-                
+
                 <div>
                     <label htmlFor="idCom">ID Comunidade</label>
                     <input type="number" name="idComunidade" id="idCom" value={armazenamneto.idComunidade} onChange={handleChange}
-                    placeholder="digite o id da sua comunidade" required/>
+                        placeholder="digite o id da sua comunidade" required />
                 </div>
 
                 <div>
                     <label htmlFor="idUnidade">ID da Unidade</label>
                     <input type="number" name="idUnidade" id="idUnidade" value={armazenamneto.idUnidade} onChange={handleChange}
-                        placeholder="digite o id da unidade que deseja transferir a energia" required/>
+                        placeholder="digite o id da unidade que deseja transferir a energia" required />
                 </div>
 
                 <div>
                     <fieldset>
                         <legend>Tipo de Transação</legend>
-
-                        <label htmlFor="idTransacaoVenda"> dar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamneto.tipoGeracao === "dar"} onChange={handleChange}/>
-
-                        <label htmlFor="idTransacaoCompra"> pegar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamneto.tipoGeracao === "pegar"} onChange={handleChange} />
+                        <div className="radio-group">
+                            <label htmlFor="idTransacaoVenda">dar</label>
+                            <input
+                                type="radio"
+                                name="tipoGeracao"
+                                id="idTransacaoVenda"
+                                value="dar"
+                                checked={armazenamneto.tipoGeracao === "dar"}
+                                onChange={handleChange}
+                            />
+                            <label htmlFor="idTransacaoCompra">pegar</label>
+                            <input
+                                type="radio"
+                                name="tipoGeracao"
+                                id="idTransacaoCompra"
+                                value="pegar"
+                                checked={armazenamneto.tipoGeracao === "pegar"}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </fieldset>
                 </div>
+
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
                     <input type="number" name="quantidade" id="idQtd" value={armazenamneto.quantidade} onChange={handleChange}
-                        placeholder="digite a quantidade que irá ser trocada" required/>
+                        placeholder="digite a quantidade que irá ser trocada" required />
                 </div>
 
                 <div>
-                    <button type="submit">REGISTRAR</button>
+                    <button type="submit" className="submit-btn">REGISTRAR</button>
                 </div>
             </form>
+            </div>
+            
         </div>
     );
 }
