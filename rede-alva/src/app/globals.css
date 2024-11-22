@@ -207,17 +207,7 @@
     }
 }
 
-.rodape{
-    @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around;
-    
-    & ul{
-        @apply text-white text-lg font-bold flex flex-row;
 
-        & li{
-            @apply p-2 md:p-8;
-        }
-    }
-}
 .info_integrantes{
     @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
 }
@@ -258,14 +248,24 @@
 }
 .rodape {
     @apply bg-customGreen h-[200px] flex items-center justify-center p-4;
-    &.text-footer {
-    @apply text-white font-bold text-xl ml-4; 
-    }
-    &.Logo {
-    @apply w-16 h-16;
-    }
-    
 }
+.rodape::before {
+    @apply absolute top-0 left-0 w-full h-[2px] bg-white;
+    content: '';
+}
+
+/* Linha inferior */
+.rodape::after {
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-white;
+    content: '';
+}
+
+
+.text-footer {
+    @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
+}
+
+
 
 
 

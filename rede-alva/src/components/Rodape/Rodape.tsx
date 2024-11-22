@@ -17,7 +17,7 @@ export default function Rodape () {
                     height={200} 
                 />
             </div>
-            <div className="text-footer">
+            <div className="text-footer ">
                 Promovendo soluções energéticas sustentáveis e acessíveis para comunidades através de microrredes
             </div>
         </div>
