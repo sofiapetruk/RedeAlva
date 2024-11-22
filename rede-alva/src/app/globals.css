@@ -256,4 +256,20 @@
 .github-icon {
     @apply w-16 mt-1.5 ml-2.5;
 }
+.rodape {
+    @apply bg-customGreen h-[200px] flex items-center justify-center p-4;
+    &.text-footer {
+    @apply text-white font-bold text-xl ml-4; 
+    }
+    &.Logo {
+    @apply w-16 h-16;
+    }
+    
+}
+
+
+
+
+
+
 
