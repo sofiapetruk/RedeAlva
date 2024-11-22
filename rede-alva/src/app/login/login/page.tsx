@@ -6,20 +6,17 @@ import Link from 'next/link';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(''); 
     const { login } = useAuth();
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError('');
         try {
-            await login(email, password);
+            await login(email, password); 
         } catch (error) {
             console.error('Erro no login:', error);
-            setError((error as Error).message); 
+            alert('Falha no login. Verifique suas credenciais e tente novamente.');
         }
     };
-    
 
     return (
         <div className="container-login">
@@ -57,7 +54,6 @@ export default function Login() {
                             required
                         />
                     </div>
-                    {error && <p style={{ color: 'red' }}>{error}</p>} {/* Exibe a mensagem de erro */}
                     <button type="submit" className="submit-btn">
                         Entrar
                     </button>

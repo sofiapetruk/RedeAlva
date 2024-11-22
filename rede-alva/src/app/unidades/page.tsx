@@ -6,19 +6,17 @@ import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
 
-
 export default function Unidades() {
-  
-
     const [unidades, setUnidades] = useState<TipoUnidade[]>([]); 
 
     const chamadaApi = async () => {
         try {
             const response = await fetch("http://localhost:8080/unidade");
             const data = await response.json();
+            console.log(data); // Verifique os dados recebidos no console
             setUnidades(data);
         } catch (error) {
-            console.error("Falha ao listar comunidades: ", error);
+            console.error("Falha ao listar unidades: ", error);
         }
     };
 
@@ -41,7 +39,6 @@ export default function Unidades() {
         }
     };
 
-
     return (
         <div className="p-4">
             <h1 className="text-3xl font-bold mb-6">Unidades</h1>
@@ -53,7 +50,7 @@ export default function Unidades() {
                         <tr className="border-b border-[#1b3040]">
                             <th className="p-4 text-white">ID Unidade</th>
                             <th className="p-4 text-white">ID Comunidade</th>
-                            <th className="p-4 text-white">Numero Unidade</th>
+                            <th className="p-4 text-white">Número Unidade</th>
                             <th className="p-4 text-white">Nome Unidade</th>
                             <th className="p-4 text-white">Capacidade Geração</th>
                             <th className="p-4 text-white">Capacidade Consumo</th>
@@ -72,7 +69,6 @@ export default function Unidades() {
                                 <td className="p-4 text-white">{unidade.capacidadeConsumo}</td>
                                 <td className="p-4 text-white">{unidade.saldoEnergia}</td>
                                 <td className="p-4 text-white flex justify-evenly items-center w-full h-full">
-                            
                                     <Link href={`/unidades/edit-unidade/${unidade.idUnidade}`}>
                                         <span className="hover:scale-125 cursor-pointer transition-all duration-300">
                                             <BiEdit size={30} color="#4300ff" />
@@ -87,7 +83,7 @@ export default function Unidades() {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colSpan={6} className="p-4 text-black text-center">Total de comunidades: {unidades.length}</td>
+                            <td colSpan={8} className="p-4 text-black text-center">Total de unidades: {unidades.length}</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -95,4 +91,3 @@ export default function Unidades() {
         </div>
     );
 }
-
