@@ -113,7 +113,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
                             placeholder="Digite o ID da comunidade"
                             required
                         />
-                        {errors.idComunidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.idComunidade}</p>}
+                        {errors.idComunidade && <p className="error-message">{errors.idComunidade}</p>}
                     </div>
 
                     <div>
@@ -127,7 +127,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
                             placeholder="Digite o nome da unidade"
                             required
                         />
-                        {errors.nomeUnidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.nomeUnidade}</p>}
+                        {errors.nomeUnidade && <p className="error-message">{errors.nomeUnidade}</p>}
                     </div>
 
                     <div>
@@ -140,7 +140,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
                             onChange={handleChange}
                             placeholder="Capacidade de geração em kWh"
                         />
-                        {errors.capacidadeGeracao && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeGeracao}</p>}
+                        {errors.capacidadeGeracao && <p className="error-message">{errors.capacidadeGeracao}</p>}
                     </div>
 
                     <div>
@@ -153,7 +153,7 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
                             onChange={handleChange}
                             placeholder="Consumo mensal em kWh"
                         />
-                        {errors.capacidadeConsumo && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeConsumo}</p>}
+                        {errors.capacidadeConsumo && <p className="error-message">{errors.capacidadeConsumo}</p>}
                     </div>
 
                     <div>

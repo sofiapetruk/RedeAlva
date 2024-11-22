@@ -107,7 +107,7 @@ export default function CadUnidades() {
                                 placeholder="Digite o ID da sua comunidade"
                                 required
                             />
-                            {errors.idComunidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.idComunidade}</p>}
+                            {errors.idComunidade && <p className="error-message">{errors.idComunidade}</p>}
                         </div>
 
                         <div>
@@ -121,7 +121,7 @@ export default function CadUnidades() {
                                 placeholder="Nome da Unidade"
                                 required
                             />
-                            {errors.nomeUnidade && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.nomeUnidade}</p>}
+                            {errors.nomeUnidade && <p className="error-message">{errors.nomeUnidade}</p>}
                         </div>
 
                         <div>
@@ -134,7 +134,7 @@ export default function CadUnidades() {
                                 onChange={handleChange}
                                 placeholder="Capacidade de geração"
                             />
-                            {errors.capacidadeGeracao && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeGeracao}</p>}
+                            {errors.capacidadeGeracao && <p className="error-message">{errors.capacidadeGeracao}</p>}
                         </div>
 
                         <div>
@@ -147,7 +147,7 @@ export default function CadUnidades() {
                                 onChange={handleChange}
                                 placeholder="Consumo de energia por kw/h"
                             />
-                            {errors.capacidadeConsumo && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.capacidadeConsumo}</p>}
+                            {errors.capacidadeConsumo && <p className="error-message">{errors.capacidadeConsumo}</p>}
                         </div>
 
                         <div>
