@@ -26,7 +26,7 @@
     @apply bg-customGreen flex flex-auto justify-around items-center;
 
     & .titulo{
-        @apply w-[80%] text-2xl md:text-4xl font-bold text-white md:p-4 text-right;
+        @apply w-[80%] text-2xl md:text-4xl font-bold text-white md:p-4 text-left;
     }
 
     & .paragrafo{
@@ -42,7 +42,7 @@
     }
 
     & .titulo{
-        @apply text-6xl font-bold text-customGreen;
+        @apply text-6xl font-bold text-customGreen text-left;
 
         & span{
             @apply text-customGreenLight;
@@ -249,17 +249,6 @@
 .rodape {
     @apply bg-customGreen h-[200px] flex items-center justify-center p-4;
 }
-.rodape::before {
-    @apply absolute top-0 left-0 w-full h-[2px] bg-white;
-    content: '';
-}
-
-/* Linha inferior */
-.rodape::after {
-    @apply absolute bottom-0 left-0 w-full h-[2px] bg-white;
-    content: '';
-}
-
 
 .text-footer {
     @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
