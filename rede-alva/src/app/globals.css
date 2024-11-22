@@ -26,11 +26,11 @@
     @apply bg-customGreen flex flex-auto justify-around items-center;
 
     & .titulo{
-        @apply w-[80%] text-2xl md:text-4xl font-bold text-white md:p-4 text-right;
+        @apply w-[90%] text-2xl md:text-4xl font-bold text-white md:p-4 text-right;
     }
 
     & .paragrafo{
-        @apply text-xl md:text-2xl text-white md:p-2 w-[80%] text-right;
+        @apply text-xl md:text-2xl text-white md:p-4 w-[100%] text-right;
     }
 }
 
@@ -41,8 +41,8 @@
         @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
     }
 
-    & .titulo{
-        @apply text-6xl font-bold text-customGreen;
+    & .titulo2{
+        @apply text-6xl font-bold text-customGreen text-left mt-4 mr-4 mb-4;
 
         & span{
             @apply text-customGreenLight;
@@ -53,16 +53,30 @@
         @apply text-xl md:text-2xl pt-2 pb-2;
     }
 
-    & .microrredes {
-        @apply flex flex-auto m-auto items-center justify-between;
-        
-        & ul li{
-            @apply flex flex-row md:p-5;
-
-        }
+    .microrredes {
+        @apply flex flex-row m-auto items-start justify-between;
+        flex-wrap: wrap; /* Permite que a imagem do painel e a lista se ajustem em diferentes tamanhos de tela */
+    }
+    
+    .microrredes img {
+        max-width: 100%;
+    }
+    
+    .microrredes ul {
+        @apply flex flex-col gap-3 ml-8; /* Espaçamento à esquerda para o texto */
+        max-width: 500px; /* Limita o tamanho máximo da lista para que ela não se estique demais */
+    }
+    
+    .microrredes ul li {
+        @apply flex flex-row items-center; /* Alinha imagem de check e texto horizontalmente */
+        gap: 1rem; /* Espaço entre a imagem e o texto */
+    }
+    
+    .microrredes ul li img {
+        width: 30px; /* Tamanho fixo para a imagem de check */
+        height: 30px; /* Tamanho fixo */
     }
 }
-
 .cards {
     @apply bg-customGreen flex flex-col md:flex-row items-center justify-center h-[1200px] md:h-[400px] mt-[3em];
 
@@ -299,9 +313,59 @@
     
     & ul{
         @apply text-white text-lg font-bold flex flex-col  md:flex-row;
-
-        & li{
-            @apply p-2 md:p-8;
-        }
     }
 }
+.info_integrantes{
+    @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
+}
+.integrantes-section {
+    @apply flex flex-col items-center w-full mt-16;
+
+    
+}
+
+.titulo {
+    @apply text-4xl text-customGreen font-medium m-12;
+    @apply md:text-5xl lg:text-6xl;
+}
+
+.integrantes-container {
+    @apply flex flex-col gap-[0.5em] mb-12 w-11/12 items-center;
+    @apply md:justify-evenly md:flex-row md:flex-wrap md:w-auto;
+    @apply lg:gap-[1.5em] xl:gap-[9em];
+}
+
+.integrante {
+    @apply mt-2.5 bg-transparent border border-[#696969] rounded-2xl p-6;
+    @apply md:max-w-[40.3%];
+}
+
+
+.nome, .rm, .curso {
+    @apply text-lg text-black mt-1.5 ml-1.5 font-normal;
+    @apply md:max-w-56;
+}
+
+.github-link {
+    @apply md:flex md:max-w-56;
+}
+
+.github-icon {
+    @apply w-16 mt-1.5 ml-2.5;
+}
+.rodape {
+    @apply bg-customGreen h-[200px] flex items-center justify-center p-4;
+}
+
+.text-footer {
+    @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
+}
+
+
+
+
+
+
+
+
+
