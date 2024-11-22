@@ -423,6 +423,13 @@
     @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
 }
 
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
 
 
 

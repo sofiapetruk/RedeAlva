@@ -94,7 +94,7 @@ export default function Cadastro() {
         });
         setConfirmPassword('');
         await login(user.email, user.senha);
-        navigate.push('/');
+        navigate.push('/cadastro');
       } else {
         alert(`Erro no cadastro: ${data.message || 'Verifique os dados informados.'}`);
       }
@@ -119,7 +119,7 @@ export default function Cadastro() {
               onChange={handleChange}
               required
             />
-            {errors.user && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.user}</p>}
+            {errors.user && <p className="error-message">{errors.user}</p>}
           </div>
           <div>
             <input
@@ -131,7 +131,7 @@ export default function Cadastro() {
               onChange={handleChange}
               required
             />
-            {errors.email && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.email}</p>}
+            {errors.email && <p className="error-message">{errors.user}</p>}
           </div>
           <div>
             <input
@@ -143,7 +143,7 @@ export default function Cadastro() {
               onChange={handleChange}
               required
             />
-            {errors.senha && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.senha}</p>}
+            {errors.senha && <p className="error-message">{errors.senha}</p>}
           </div>
           <div>
             <input
@@ -155,7 +155,7 @@ export default function Cadastro() {
               required
             />
             {errors.confirmPassword && (
-              <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.confirmPassword}</p>
+              <p className="error-message">{errors.confirmPassword}</p>
             )}
           </div>
           <div>
@@ -168,7 +168,7 @@ export default function Cadastro() {
               onChange={handleChange}
               required
             />
-            {errors.date && <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>{errors.date}</p>}
+            {errors.date && <p className="error-message">{errors.date}</p>}
           </div>
 
           <button type="submit" className="submit-btn">
