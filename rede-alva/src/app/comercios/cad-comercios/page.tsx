@@ -86,33 +86,30 @@ export default function CadComunidades() {
 
     return (
         <div>
-            <h2>CADASTRO DE COMÉRCIO</h2>
+            <h2>CADASTRO DE COMERCIO</h2>
             <form onSubmit={handleSubmit}>
+                
                 <div>
                     <label htmlFor="idCom">ID Comunidade</label>
                     <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
-                    placeholder="Digite o ID da sua comunidade" required/>
-                    {errors.idComunidade && <p style={{ color: "red" }}>{errors.idComunidade}</p>}
+                    placeholder="digite o id da sua comunidade" required/>
                 </div>
                 <div>
                     <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
                     <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
-                        placeholder="Digite o ID da unidade vendedora" required/>
-                    {errors.unidadeVedendoraId && <p style={{ color: "red" }}>{errors.unidadeVedendoraId}</p>}
+                        placeholder="digite o id da unidade vendedora" required/>
                 </div>
 
                 <div>
                     <label htmlFor="idCompradora">ID da Unidade Compradora</label>
                     <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
-                        placeholder="Digite o ID da unidade compradora" required/>
-                    {errors.unidadeCompradoraId && <p style={{ color: "red" }}>{errors.unidadeCompradoraId}</p>}
+                        placeholder="digite o id da unidade compradora" required/>
                 </div>
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
                     <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
-                        placeholder="Digite a quantidade que será trocada" required/>
-                    {errors.quantidade && <p style={{ color: "red" }}>{errors.quantidade}</p>}
+                        placeholder="digite a quantidade que irá ser trocada" required/>
                 </div>
 
                 <div>

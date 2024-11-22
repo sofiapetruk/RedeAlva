@@ -94,8 +94,8 @@ export default function CadComunidades() {
     return (
         <div className="main-comunidade">
             <h1 className="titulo">
-                <span>1</span> Comunidade - <span>2</span> Unidade
-            </h1>
+                    <span>1</span> Comunidade <span>2</span> Unidade
+                </h1>
             <div className="container-comunidade">
                 <div className="info-comunidade">
                     <h1>INSIRA AS INFORMAÇÕES NO FORMULÁRIO PARA CADASTRAR SUA COMUNIDADE</h1>

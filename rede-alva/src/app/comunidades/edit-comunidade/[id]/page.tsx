@@ -98,42 +98,40 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit}>
-                <h3 className="text-black text-center text-3xl">Editar Comunidade</h3>
-
-                <div>
-                    <label htmlFor="idTipo">Tipo da comunidade</label>
-                    <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange}
-                        placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required/>
+        <div className="container-edit">
+            <div className="form-edit">
+                <h1 className="titulo">Editar Comunidade</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="idTipo">Tipo da comunidade</label>
+                        <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange}
+                            placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required/>
                     {errors.tipoComunidade && <p style={{ color: "red" }}>{errors.tipoComunidade}</p>}
-                </div>
-
-                <div>
-                    <label htmlFor="idEnd">Endereço</label>
-                    <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
-                        placeholder="endereço da comunidade" required/>
+                    </div>
+                    <div>
+                        <label htmlFor="idEnd">Endereço</label>
+                        <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
+                            placeholder="endereço da comunidade" required/>
                     {errors.endereco && <p style={{ color: "red" }}>{errors.endereco}</p>}
-                </div>
-
-                <div>
-                    <label htmlFor="idEst">Estado</label>
-                    <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
-                        placeholder="estado da comunidade" required/>
+                    </div>
+                    <div>
+                        <label htmlFor="idEst">Estado</label>
+                        <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
+                            placeholder="estado da comunidade" required/>
                     {errors.estado && <p style={{ color: "red" }}>{errors.estado}</p>}
-                </div>
-
-                <div>
-                    <label htmlFor="idEnergia">Total de energia</label>
-                    <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
-                        placeholder="total de energia do microgrid, caso houver"/>
+                    </div>
+                    <div>
+                        <label htmlFor="idEnergia">Total de energia</label>
+                        <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
+                            placeholder="total de energia do microgrid, caso houver"/>
                     {errors.totalEnergia && <p style={{ color: "red" }}>{errors.totalEnergia}</p>}
-                </div>
-
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+                    </div>
+                    <div>
+                        <button type="submit" className="submit-btn">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+            
         </div>
     );
 }

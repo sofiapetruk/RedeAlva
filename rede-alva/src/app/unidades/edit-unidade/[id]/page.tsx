@@ -91,64 +91,33 @@ export default function EditUnidade({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} >
-                <h3 className="text-black text-center text-3xl">Editar Unidade</h3>
-
-                <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input
-                        type="number"
-                        name="idComunidade"
-                        id="idCom"
-                        value={unidade.idComunidade}
-                        onChange={handleChange}
-                        placeholder="Digite o ID da sua comunidade"
-                        required
-                    />
-                    {errors.idComunidade && <p style={{ color: "red" }}>{errors.idComunidade}</p>}
-                </div>
+        <div className="container-edit">
+            <div className="form-edit">
+                <h1 className="titulo">Editar Unidade</h1>
+                <form onSubmit={handleSubmit} >
+                    <div>
+                        <label htmlFor="idCom">ID Comunidade</label>
+                        <input type="number" name="idComunidade" id="idCom" value={unidade.idComunidade} onChange={handleChange}
+                        placeholder="digite o id da sua comunidade" required/>
+                    </div>
 
                 <div>
                     <label htmlFor="idNm">Nome Unidade</label>
-                    <input
-                        type="text"
-                        name="nomeUnidade"
-                        id="idNm"
-                        value={unidade.nomeUnidade}
-                        onChange={handleChange}
-                        placeholder="Digite o nome da unidade"
-                        required
-                    />
-                    {errors.nomeUnidade && <p style={{ color: "red" }}>{errors.nomeUnidade}</p>}
+                    <input type="text" name="nomeUnidade" id="idNm" value={unidade.nomeUnidade} onChange={handleChange}
+                    placeholder="digite o nome da sua comunidade" required/>
                 </div>
 
                 <div>
                     <label htmlFor="idGer">Capacidade de Geração</label>
-                    <input
-                        type="number"
-                        name="capacidadeGeracao"
-                        id="idGer"
-                        value={unidade.capacidadeGeracao ?? ''}
-                        onChange={handleChange}
-                        placeholder="Digite quantos kWh o seu painel solar consegue gerar"
-                    />
-                    {errors.capacidadeGeracao && <p style={{ color: "red" }}>{errors.capacidadeGeracao}</p>}
+                    <input type="number" name="capacidadeGeracao" id="idGer" value={unidade.capacidadeGeracao ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh o seu painel solar consegue geral"/>
                 </div>
 
                 <div>
                     <label htmlFor="idCons">Capacidade Consumo</label>
-                    <input
-                        type="number"
-                        name="capacidadeConsumo"
-                        id="idCons"
-                        value={unidade.capacidadeConsumo ?? ''}
-                        onChange={handleChange}
-                        placeholder="Digite quantos kWh consome por mês"
-                    />
-                    {errors.capacidadeConsumo && <p style={{ color: "red" }}>{errors.capacidadeConsumo}</p>}
+                    <input type="number" name="capacidadeConsumo" id="idCons" value={unidade.capacidadeConsumo ?? ''} onChange={handleChange}
+                    placeholder="digite quantos de kwh conseme por mês"/>
                 </div>
-
                 <div>
                     <button type="submit">Atualizar</button>
                 </div>

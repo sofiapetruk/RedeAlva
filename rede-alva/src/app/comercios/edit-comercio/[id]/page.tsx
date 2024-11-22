@@ -93,65 +93,34 @@ export default function EditComercio({ params }: { params: { id: number } }) {
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit}>
-                <h3 className="text-black text-center text-3xl">Editar Comércio</h3>
-
-                <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input
-                        type="number"
-                        name="idComunidade"
-                        id="idCom"
-                        value={comercio.idComunidade}
-                        onChange={handleChange}
-                        placeholder="Digite o ID da sua comunidade"
-                        required
-                    />
-                    {errors.idComunidade && <p style={{ color: "red" }}>{errors.idComunidade}</p>}
-                </div>
-                <div>
-                    <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
-                    <input
-                        type="number"
-                        name="unidadeVedendoraId"
-                        id="idVendedora"
-                        value={comercio.unidadeVedendoraId}
-                        onChange={handleChange}
-                        placeholder="Digite o ID da unidade vendedora"
-                        required
-                    />
-                    {errors.unidadeVedendoraId && <p style={{ color: "red" }}>{errors.unidadeVedendoraId}</p>}
-                </div>
+        <div className="container-edit">
+            <div className="form-edit">
+            <h1 className="titulo">Editar Comercio</h1>
+                <form onSubmit={handleSubmit} >
+                    <div>
+                        <label htmlFor="idCom">ID Comunidade</label>
+                        <input type="number" name="idComunidade" id="idCom" value={comercio.idComunidade} onChange={handleChange}
+                        placeholder="digite o id da sua comunidade" required/>
+                    </div>
+                    <div>
+                        <label htmlFor="idVendedora">ID da Unidade Vendedora</label>
+                        <input type="number" name="unidadeVedendoraId" id="idVendedora" value={comercio.unidadeVedendoraId} onChange={handleChange}
+                            placeholder="digite o id da unidade vendedora" required/>
+                    </div>
 
                 <div>
                     <label htmlFor="idCompradora">ID da Unidade Compradora</label>
-                    <input
-                        type="number"
-                        name="unidadeCompradoraId"
-                        id="idCompradora"
-                        value={comercio.unidadeCompradoraId}
-                        onChange={handleChange}
-                        placeholder="Digite o ID da unidade compradora"
-                        required
-                    />
-                    {errors.unidadeCompradoraId && <p style={{ color: "red" }}>{errors.unidadeCompradoraId}</p>}
+                    <input type="number" name="unidadeCompradoraId" id="idCompradora" value={comercio.unidadeCompradoraId} onChange={handleChange}
+                        placeholder="digite o id da unidade compradora" required/>
                 </div>
+
 
                 <div>
                     <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input
-                        type="number"
-                        name="quantidade"
-                        id="idQtd"
-                        value={comercio.quantidade}
-                        onChange={handleChange}
-                        placeholder="Digite a quantidade que será trocada"
-                        required
-                    />
-                    {errors.quantidade && <p style={{ color: "red" }}>{errors.quantidade}</p>}
+                    <input type="number" name="quantidade" id="idQtd" value={comercio.quantidade} onChange={handleChange}
+                        placeholder="digite a quantidade que irá ser trocada" required/>
                 </div>
-
+                
                 <div>
                     <button type="submit">Atualizar</button>
                 </div>
