@@ -8,7 +8,7 @@
 }
 
 .cabecalho {
-    @apply flex flex-col md:flex-row justify-center md:justify-around bg-customGreen text-white items-center text-lg md:text-2xl md:p-4;
+    @apply flex flex-col md:flex-row justify-center md:justify-around bg-customGreen text-white items-center text-lg md:text-2xl p-4 md:p-4;
 
     & .logo{
         @apply text-xl md:text-3xl font-serif italic font-bold;
@@ -23,26 +23,26 @@
 }
 
 .servicos {
-    @apply bg-customGreen flex flex-auto justify-around items-center;
+    @apply bg-customGreen flex flex-col md:flex-row justify-center md:justify-around items-center p-4;
 
     & .titulo{
-        @apply w-[90%] text-2xl md:text-4xl font-bold text-white md:p-4 text-right;
+        @apply w-[90%] text-2xl md:text-4xl font-bold text-white md:p-4 text-center md:text-right;
     }
 
     & .paragrafo{
-        @apply text-xl md:text-2xl text-white md:p-4 w-[100%] text-right;
+        @apply text-xl md:text-2xl text-white md:p-4 w-80 md:w-[100%] text-center md:text-right;
     }
 }
 
 .sobre{
-    @apply w-[90%] m-auto;
+    @apply w-80 md:w-[90%] m-auto;
 
     & .solucoes{
         @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
     }
 
     & .titulo2{
-        @apply text-6xl font-bold text-customGreen text-left mt-4 mr-4 mb-4;
+        @apply text-5xl md:text-6xl font-bold text-customGreen text-left mt-4 mr-4 mb-4;
 
         & span{
             @apply text-customGreenLight;
@@ -63,7 +63,7 @@
     }
     
     .microrredes ul {
-        @apply flex flex-col gap-3 ml-8; /* Espaçamento à esquerda para o texto */
+        @apply flex flex-col gap-3 md:ml-8; /* Espaçamento à esquerda para o texto */
         max-width: 500px; /* Limita o tamanho máximo da lista para que ela não se estique demais */
     }
     
@@ -84,7 +84,7 @@
         @apply w-[250px] h-[300px] m-auto p-4 bg-white rounded-md shadow-md flex flex-col items-center;
 
         & .paragrafo {
-            @apply m-auto text-xl
+            @apply m-auto text-xl;
         }
     }
 }
@@ -114,14 +114,14 @@
     @apply flex flex-auto;
 
     & .info-login{
-        @apply bg-customGreen text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+        @apply bg-customGreen text-white h-[60vh] w-[40%] md:w-[50%] flex flex-col items-center justify-center;
 
         & h1{
-            @apply text-5xl font-bold p-4;
+            @apply text-4xl md:text-5xl font-bold p-4;
         }
 
         & p{
-            @apply w-[40%] text-center p-4;
+            @apply w-40 md:w-[40%] text-center p-4;
         }
 
         & .cadastro-btn{
@@ -130,17 +130,17 @@
     }
 
     & .form-login{
-        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center m-auto;
 
         & h1{
             @apply text-5xl font-bold p-4 text-customGreen;
         }
 
         & form{
-            @apply flex flex-col justify-center
+            @apply flex flex-col justify-center;
         }
         input {
-            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
+            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300 text-black;
         }
 
         & .submit-btn {
@@ -156,11 +156,11 @@
         @apply bg-customGreen text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
 
         & h1{
-            @apply text-5xl font-bold p-4;
+            @apply text-4xl md:text-5xl font-bold p-4 text-center;
         }
 
         & p{
-            @apply w-[40%] text-center p-4;
+            @apply w-40 md:w-80 text-center p-4;
         }
 
         & .cadastro-btn{
@@ -169,17 +169,17 @@
     }
 
     & .form-login{
-        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center m-auto;
 
         & h1{
-            @apply text-5xl font-bold p-4 text-customGreen;
+            @apply text-4xl md:text-5xl font-bold p-4 text-customGreen;
         }
 
         & form{
-            @apply flex flex-col justify-center
+            @apply flex flex-col justify-center;
         }
         input {
-            @apply w-full px-3 py-2 m-2 border rounded-md bg-gray-300;
+            @apply w-40 md:w-full px-2 py-2 m-2 border rounded-md bg-gray-300 text-black;
         }
 
         & .submit-btn {
@@ -202,12 +202,181 @@
             @apply text-xl p-2
         }
         & .botao{
-            @apply p-4 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500;
+            @apply p-3 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500;
+        }
+    }
+}
+.main-comunidade{
+    @apply bg-customGreen p-4;
+
+    & .titulo{
+        @apply text-4xl font-bold p-4 text-white text-center flex flex-col md:flex-row items-center justify-center;
+
+        & span{
+            @apply rounded-full bg-gray-200 text-black flex justify-center items-center p-4 w-12 h-12 m-2;
+        }
+    }
+}
+
+.main-unidades{
+    @apply bg-customGreen p-4;
+
+    & .titulo{
+        @apply text-4xl font-bold p-4 text-white text-center flex flex-col md:flex-row items-center justify-center;
+
+        & span{
+            @apply rounded-full bg-gray-200 text-black flex justify-center items-center p-4 w-12 h-12 m-2;
+        }
+    }
+}
+.container-comunidade{
+    @apply flex flex-col md:flex-row bg-customGreen;
+
+    & .info-comunidade{
+        @apply flex flex-col w-80 m-auto items-center;
+
+        & h1{
+            @apply text-white text-3xl font-bold w-80;
+        }
+    }
+
+    & .form-comunidade{
+        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & input{
+            @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.container-edit{
+    @apply bg-customGreen p-4;
+
+    & .form-edit{
+        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight m-auto w-full rounded-t-3xl text-center text-xl text-white p-4;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & label{
+            @apply w-8 h-8;
+        }
+        & input{
+            @apply w-60 px-3 py-2 m-4 border rounded-lg bg-gray-300;
+        }
+        & .opcao{
+            @apply flex flex-row justify-start items-center w-6 ml-6;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.container-unidade{
+    @apply flex flex-col md:flex-row bg-customGreen;
+
+    & .info-unidade{
+        @apply flex flex-col w-80 m-auto items-center;
+
+        & h1{
+            @apply text-white text-3xl font-bold w-full;
+        }
+    }
+
+    & .form-unidades{
+        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & label{
+            @apply text-gray-600 text-lg m-2;
+        }
+        & input{
+            @apply w-[90%] px-3 py-2 m-2 border rounded-lg bg-gray-300;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+    }
+}
+
+.container-comercio{
+    @apply flex flex-col bg-white items-center justify-center p-4;
+
+    & .titulo{
+        @apply text-center;
+    }
+
+    & .form-comercio{
+        @apply flex flex-col m-auto bg-customGreenLight w-[80] h-full rounded-3xl;
+
+        & h1{
+            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+        }
+        & h2{
+            @apply text-white w-80 text-center p-4 font-bold text-xl;
+        }
+        & form{
+            @apply flex flex-col justify-center items-center p-2;
+        }
+        & label{
+            @apply text-white text-lg m-2;
+        }
+        & input{
+            @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
+        }
+        & .submit-btn {
+            @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
+        }
+        & .submit-btn{
+            @apply text-white;
         }
     }
 }
 
 
+.integrantes{
+    @apply w-[80%] m-auto mb-[3em] rounded-2xl p-4 bg-gray-200;
+
+    & .cards {
+        @apply bg-gray-200 flex flex-col md:flex-row items-center justify-center m-auto;
+    
+        & .card {
+            @apply w-[300px] h-[400px] m-auto bg-white rounded-3xl shadow-md flex flex-col items-center justify-center;
+            
+            & .infos{
+                @apply flex flex-col md:flex-row m-auto justify-between;
+
+
+            }
+        }
+    }
+}
+
+.rodape{
+    @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around;
+    
+    & ul{
+        @apply text-white text-lg font-bold flex flex-col  md:flex-row;
+    }
+}
 .info_integrantes{
     @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
 }
@@ -247,12 +416,19 @@
     @apply w-16 mt-1.5 ml-2.5;
 }
 .rodape {
-    @apply bg-customGreen h-[200px] flex items-center justify-center p-4;
+    @apply bg-customGreen h-[200px] flex flex-row items-center justify-center p-4;
 }
 
 .text-footer {
     @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
 }
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 
 
 

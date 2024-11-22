@@ -11,7 +11,6 @@ import Petruk from "@/img/petruk.jpg"
 import Github from "@/img/github.png"
 import Carlos from "@/img/Carlos.jpeg"
 
-
 export default function Home () {
   return (
     <div className="main">
