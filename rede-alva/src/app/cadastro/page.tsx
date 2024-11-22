@@ -35,11 +35,6 @@ export default function Cadastro() {
               Cadastrar Unidade
             </button>
           </Link>
-          <Link href="/comercios/cad-comercios">
-            <button className='botao'>
-              Cadastrar Comércio
-            </button>
-          </Link>
         </div>
         <button
           onClick={logout}

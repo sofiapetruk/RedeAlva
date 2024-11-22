@@ -21,7 +21,7 @@ export default function CadComunidades() {
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evento.target;
 
-        // Verifica o campo totalEnergia para garantir que é um número ou null
+        
         if (name === "totalEnergia") {
             if (value === "" || /^[0-9]*$/.test(value)) {
                 setComunidade({ ...comunidade, [name]: value === "" ? null : parseFloat(value) });
@@ -112,25 +112,25 @@ export default function CadComunidades() {
                         <div>
                             <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange} 
                                 placeholder="Tipo de comunidade (Rural ou urbana/Prédios ou casa)" required />
-                            {errors.tipoComunidade && <p style={{ color: "red" }}>{errors.tipoComunidade}</p>}
+                            {errors.tipoComunidade && <p className="error-message">{errors.tipoComunidade}</p>}
                         </div>
 
                         <div>
                             <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
                                 placeholder="Endereço da comunidade" required />
-                            {errors.endereco && <p style={{ color: "red" }}>{errors.endereco}</p>}
+                            {errors.endereco && <p className="error-message">{errors.endereco}</p>}
                         </div>
 
                         <div>
                             <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
                                 placeholder="Estado da comunidade" required />
-                            {errors.estado && <p style={{ color: "red" }}>{errors.estado}</p>}
+                            {errors.estado && <p className="error-message">{errors.estado}</p>}
                         </div>
 
                         <div>
                             <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
                                 placeholder="Total de energia do microgrid, caso houver" />
-                            {errors.totalEnergia && <p style={{ color: "red" }}>{errors.totalEnergia}</p>}
+                            {errors.totalEnergia && <p className="error-message">{errors.totalEnergia}</p>}
                         </div>
 
                         <div>

@@ -102,30 +102,30 @@ export default function EditComunidade({ params }: { params: { id: number } }) {
             <div className="form-edit">
                 <h1 className="titulo">Editar Comunidade</h1>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="idTipo">Tipo da comunidade</label>
-                        <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange}
-                            placeholder="tipo de comunidade (Rural ou urbana/Prédios ou casa)" required/>
-                    {errors.tipoComunidade && <p style={{ color: "red" }}>{errors.tipoComunidade}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="idEnd">Endereço</label>
-                        <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
-                            placeholder="endereço da comunidade" required/>
-                    {errors.endereco && <p style={{ color: "red" }}>{errors.endereco}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="idEst">Estado</label>
-                        <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
-                            placeholder="estado da comunidade" required/>
-                    {errors.estado && <p style={{ color: "red" }}>{errors.estado}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="idEnergia">Total de energia</label>
-                        <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
-                            placeholder="total de energia do microgrid, caso houver"/>
-                    {errors.totalEnergia && <p style={{ color: "red" }}>{errors.totalEnergia}</p>}
-                    </div>
+                        <div>
+                            <input type="text" name="tipoComunidade" id="idTipo" value={comunidade.tipoComunidade} onChange={handleChange} 
+                                placeholder="Tipo de comunidade (Rural ou urbana/Prédios ou casa)" required />
+                            {errors.tipoComunidade && <p className="error-message">{errors.tipoComunidade}</p>}
+                        </div>
+
+                        <div>
+                            <input type="text" name="endereco" id="idEnd" value={comunidade.endereco} onChange={handleChange}
+                                placeholder="Endereço da comunidade" required />
+                            {errors.endereco && <p className="error-message">{errors.endereco}</p>}
+                        </div>
+
+                        <div>
+                            <input type="text" name="estado" id="idEst" value={comunidade.estado} onChange={handleChange}
+                                placeholder="Estado da comunidade" required />
+                            {errors.estado && <p className="error-message">{errors.estado}</p>}
+                        </div>
+
+                        <div>
+                            <input type="number" name="totalEnergia" id="idEnergia" value={comunidade.totalEnergia ?? ''} onChange={handleChange}
+                                placeholder="Total de energia do microgrid, caso houver" />
+                            {errors.totalEnergia && <p className="error-message">{errors.totalEnergia}</p>}
+                        </div>
+
                     <div>
                         <button type="submit" className="submit-btn">Atualizar</button>
                     </div>
