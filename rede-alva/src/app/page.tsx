@@ -31,7 +31,7 @@ export default function Home () {
       </div>
       <div className="sobre" id="sobre">
         <p className="solucoes">SOLUÇÕES PARA SUA ENERGIA</p>
-        <h1 className="titulo">
+        <h1 className="titulo2">
           MICRO<span>RREDES</span>
         </h1>
         <p className="paragrafo">

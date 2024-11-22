@@ -41,8 +41,8 @@
         @apply text-center p-4 font-bold text-customGreen underline decoration-4 underline-offset-4  mt-[3em];
     }
 
-    & .titulo{
-        @apply text-6xl font-bold text-customGreen text-left;
+    & .titulo2{
+        @apply text-6xl font-bold text-customGreen text-left mt-4 mr-4 mb-4;
 
         & span{
             @apply text-customGreenLight;
