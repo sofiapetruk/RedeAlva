@@ -21,7 +21,7 @@ export default function Cadastro() {
     <div className="container-cadastropage">
             <div className="fundo">
                 <h1>Comércio</h1>
-                <p>Escolha uma das opções abaixo para fazer o comércio de ENERGIA:</p>
+                <p>Escolha uma das opções abaixo para fazer o cadastro de ENERGIA:</p>
                 <div className='flex flex-col items-center md:flex-row'>
                      <Link href="/comercios/cad-cumunidades">
                         <button className='botao'>Cadastrar Comunidade</button>
