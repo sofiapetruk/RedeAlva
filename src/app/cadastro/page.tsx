@@ -23,10 +23,10 @@ export default function Cadastro() {
                 <h1>Comércio</h1>
                 <p>Escolha uma das opções abaixo para fazer o cadastro de ENERGIA:</p>
                 <div className='flex flex-col items-center md:flex-row'>
-                     <Link href="/comercios/cad-cumunidades">
+                     <Link href="/comunidades/cad-comunidades">
                         <button className='botao'>Cadastrar Comunidade</button>
                     </Link>
-                    <Link href="/armazenamentos/cad-unidades">
+                    <Link href="/unidades/cad-unidades"">
                         <button className='botao'>Cadastrar Unidade</button>
                     </Link>
                 </div>
