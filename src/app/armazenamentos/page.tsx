@@ -8,7 +8,7 @@ import { BiEdit } from "react-icons/bi";
 
 
 export default function Armazenamento() {
-    const navigate = useRouter(); // redirecionamento para home
+
 
     const [armazenamentos, setArmazenamentos] = useState<TipoArmazenamento[]>([]); // chamar a lista
 
