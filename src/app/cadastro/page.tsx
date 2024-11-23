@@ -19,31 +19,22 @@ export default function Cadastro() {
 
   return (
     <div className="container-cadastropage">
-      <div className="fundo">
-        <h1>Cadastro</h1>
-        <p>
-          Escolha uma das opções abaixo para continuar o cadastro:
-        </p>
-        <div>
-          <Link href="/comunidades/cad-comunidades">
-            <button className='botao'>
-              Cadastrar Comunidade
-            </button>
-          </Link>
-          <Link href="/unidades/cad-unidades">
-            <button className='botao'>
-              Cadastrar Unidade
-            </button>
-          </Link>
-        </div>
-        <button
-          onClick={logout}
-          className="mt-8 px-4 py-2 text-black bg-gray-200 rounded hover:bg-red-700"
-        >
-          Sair
-        </button>
+          <div className="fundo">
+              <h1>Comércio</h1>
+              <p>Escolha uma das opções abaixo para fazer o comércio de ENERGIA:</p>
+              <div className='flex flex-col items-center md:flex-row'>
+                <Link href="/comunidades/cad-comunidades">
+                  <button className='botao'>Cadastrar Comunidade</button>
+                </Link>
+                <Link href="/comercios/cad-comercios">
+                  <button className='botao'>Cadastrar Comércio</button>
+                </Link>
+                <Link href="/armazenamentos/cad-armazenamentos">
+                  <button className='botao'>Cadastrar Armazenamento</button>
+                </Link>
+              </div>
+              <button onClick={logout} className="mt-8 px-4 py-2 text-black bg-gray-200 rounded hover:bg-red-700 mb-6">Sair</button>
+           </div>
       </div>
-
-    </div>
   );
 }
