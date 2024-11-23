@@ -18,15 +18,15 @@ export default function Cadastro() {
   if (!isAuthenticated) return null; // Evita renderizar antes de redirecionar
 
   return (
-    <div className="container-cadastropage">
+     <div className="container-cadastropage">
             <div className="fundo">
                 <h1>Comércio</h1>
-                <p>Escolha uma das opções abaixo para fazer o cadastro de ENERGIA:</p>
+                <p>Escolha uma das opções abaixo para fazer o comércio de ENERGIA:</p>
                 <div className='flex flex-col items-center md:flex-row'>
-                     <Link href="/comunidades/cad-comunidades">
+                    <Link href="/comunidades/cad-comunidades">
                         <button className='botao'>Cadastrar Comunidade</button>
                     </Link>
-                    <Link href="/unidades/cad-unidades"">
+                    <Link href="/unidades/cad-unidades">
                         <button className='botao'>Cadastrar Unidade</button>
                     </Link>
                 </div>
