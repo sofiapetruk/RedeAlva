@@ -68,7 +68,7 @@ export default function CadComunidades() {
                     <fieldset>
                         <legend>Tipo de Transação</legend>
                         <div className="radio-group">
-                            <label htmlFor="idTransacaoVenda">dar</label>
+                            <label htmlFor="idTransacaoVenda">Doar</label>
                             <input
                                 type="radio"
                                 name="tipoGeracao"
@@ -77,7 +77,7 @@ export default function CadComunidades() {
                                 checked={armazenamneto.tipoGeracao === "dar"}
                                 onChange={handleChange}
                             />
-                            <label htmlFor="idTransacaoCompra">pegar</label>
+                            <label htmlFor="idTransacaoCompra">Pegar</label>
                             <input
                                 type="radio"
                                 name="tipoGeracao"

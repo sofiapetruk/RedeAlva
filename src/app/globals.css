@@ -8,7 +8,7 @@
 }
 
 .cabecalho {
-    @apply flex flex-col md:flex-row justify-center md:justify-around bg-customGreen text-white items-center text-lg md:text-2xl p-4 md:p-4;
+    @apply flex flex-col md:flex-row justify-center md:justify-around bg-customGreen text-white items-center text-base md:text-lg lg:text-2xl p-4 md:p-4;
 
     & .logo{
         @apply text-xl md:text-3xl font-serif italic font-bold;
@@ -26,7 +26,7 @@
     @apply bg-customGreen flex flex-col md:flex-row justify-center md:justify-around items-center p-4;
 
     & .titulo{
-        @apply w-[90%] text-2xl md:text-4xl font-bold text-white md:p-4 text-center md:text-right;
+        @apply text-2xl md:text-4xl font-bold text-white md:p-4 text-center md:text-right;
     }
 
     & .paragrafo{
@@ -42,7 +42,7 @@
     }
 
     & .titulo2{
-        @apply text-5xl md:text-6xl font-bold text-customGreen text-left mt-4 mr-4 mb-4;
+        @apply text-4xl md:text-6xl text-center font-bold text-customGreen md:text-left mt-4 mr-4 mb-4;
 
         & span{
             @apply text-customGreenLight;
@@ -50,7 +50,7 @@
     }
 
     & .paragrafo {
-        @apply text-xl md:text-2xl pt-2 pb-2;
+        @apply text-lg md:text-2xl text-center md:text-left pt-2 pb-2;
     }
 
     .microrredes {
@@ -90,13 +90,13 @@
 }
 
 .simular {
-    @apply w-[80%] bg-customGreenLight rounded-2xl m-auto mt-[3em] p-4 flex flex-auto justify-around items-center mb-[3em];
+    @apply w-[80%] bg-customGreenLight rounded-2xl m-auto mt-[3em] p-4 flex flex-col lg:flex-row flex-auto justify-around items-center mb-[3em];
 
     & .conteudo {
-        @apply w-[50%] text-white;
+        @apply lg:w-1/2 w-full text-white flex flex-col;
         
         & h1{
-            @apply text-3xl font-bold p-2;
+            @apply text-xl lg:text-3xl font-bold p-2;
         }
 
         & p{
@@ -104,17 +104,17 @@
         }
 
         & .cadastro-btn{
-            @apply p-4 bg-customGreen rounded-xl font-bold;
+            @apply p-4 bg-customGreen rounded-xl font-bold md:w-1/2 mb-4;
         }
     }
 
 }
 
 .container-login{
-    @apply flex flex-auto;
+    @apply flex flex-col-reverse lg:flex-row flex-auto;
 
     & .info-login{
-        @apply bg-customGreen text-white h-[60vh] w-[40%] md:w-[50%] flex flex-col items-center justify-center;
+        @apply bg-customGreen text-white h-[60vh] lg:w-1/2 flex flex-col items-center justify-center;
 
         & h1{
             @apply text-4xl md:text-5xl font-bold p-4;
@@ -130,7 +130,7 @@
     }
 
     & .form-login{
-        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center m-auto;
+        @apply bg-white text-white flex flex-col items-center justify-center m-auto;
 
         & h1{
             @apply text-5xl font-bold p-4 text-customGreen;
@@ -144,16 +144,16 @@
         }
 
         & .submit-btn {
-            @apply px-8 py-2 bg-customGreen rounded-xl font-bold text-center m-auto;
+            @apply px-8 py-2 bg-customGreen rounded-xl font-bold text-center m-auto mb-4;
         }
     }
 }
 
 .container-cadastro{
-    @apply flex flex-auto;
+    @apply flex flex-col lg:flex-row flex-auto;
 
     & .info-login{
-        @apply bg-customGreen text-white h-[60vh] w-[50%] flex flex-col items-center justify-center;
+        @apply bg-customGreen h-[60vh] lg:w-1/2 text-white flex flex-col items-center justify-center;
 
         & h1{
             @apply text-4xl md:text-5xl font-bold p-4 text-center;
@@ -164,12 +164,12 @@
         }
 
         & .cadastro-btn{
-            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold;
+            @apply px-4 py-2 bg-customGreenLight rounded-xl font-bold mb-4;
         }
     }
 
     & .form-login{
-        @apply bg-white text-white h-[60vh] w-[50%] flex flex-col items-center justify-center m-auto;
+        @apply bg-white text-white flex flex-col items-center justify-center m-auto;
 
         & h1{
             @apply text-4xl md:text-5xl font-bold p-4 text-customGreen;
@@ -189,20 +189,20 @@
 }
 
 .container-cadastropage{
-    @apply w-[80%] h-[60vh] flex flex-auto m-auto items-center justify-center;
+    @apply flex flex-auto my-24 items-center justify-center;
 
     & .fundo{
-        @apply bg-customGreen w-[40vw] h-[50vh]  flex flex-col m-auto items-center justify-center text-white rounded-2xl;
+        @apply bg-customGreen w-11/12 lg:w-7/12 flex flex-col m-auto items-center justify-center text-white rounded-2xl;
 
         & h1{
             @apply text-4xl font-bold p-4;
         }
 
         & p{
-            @apply text-xl p-2
+            @apply text-xl p-2 text-center
         }
         & .botao{
-            @apply p-3 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500;
+            @apply p-3 m-2 bg-customGreenLight rounded-2xl hover:border-4 hover:border-emerald-500 xl:text-xl mt-8;
         }
     }
 }
@@ -233,15 +233,15 @@
     @apply flex flex-col md:flex-row bg-customGreen;
 
     & .info-comunidade{
-        @apply flex flex-col w-80 m-auto items-center;
+        @apply flex flex-col items-center;
 
         & h1{
-            @apply text-white text-3xl font-bold w-80;
+            @apply text-white text-center md:text-left text-3xl font-bold w-80;
         }
     }
 
     & .form-comunidade{
-        @apply flex flex-col m-auto bg-white w-80 h-full rounded-3xl;
+        @apply flex flex-col m-auto bg-white h-full rounded-3xl;
 
         & h1{
             @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
@@ -325,19 +325,19 @@
     }
 
     & .form-comercio{
-        @apply flex flex-col m-auto bg-customGreenLight w-[80] h-full rounded-3xl;
+        @apply flex flex-col m-auto bg-customGreenLight rounded-3xl mb-4;
 
         & h1{
             @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
         }
         & h2{
-            @apply text-white w-80 text-center p-4 font-bold text-xl;
+            @apply text-white text-center p-4 font-bold text-xl;
         }
         & form{
             @apply flex flex-col justify-center items-center p-2;
         }
         & label{
-            @apply text-white text-lg m-2;
+            @apply text-white text-lg m-2 text-wrap flex w-11/12;
         }
         & input{
             @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
@@ -355,14 +355,14 @@
     @apply flex flex-col bg-white items-center justify-center p-4;
 
     & .titulo {
-        @apply text-center;
+        @apply text-center text-2xl md:text-3xl;
     }
 
     & .form-armazenamento {
-        @apply flex flex-col m-auto bg-customGreenLight w-[80] h-full rounded-3xl;
+        @apply flex flex-col w-11/12 md:w-7/12 lg:w-4/12 xl:w-3/12 bg-customGreenLight rounded-3xl;
 
         & h1 {
-            @apply bg-customGreenLight rounded-t-3xl text-center text-xl text-white p-2;
+            @apply bg-customGreenLight text-center text-xl text-white p-2;
         }
         & h2 {
             @apply text-white w-80 text-center p-4 font-bold text-xl;
@@ -371,13 +371,13 @@
             @apply flex flex-col justify-center items-center p-2;
         }
         & label {
-            @apply text-white text-lg m-2;
+            @apply text-white text-lg m-2 text-wrap flex;
         }
         & input {
-            @apply w-60 px-3 py-2 m-2 border rounded-lg bg-gray-300;
+            @apply px-3 py-2 m-2 border rounded-lg bg-gray-300;
         }
         & .radio-group {
-            @apply flex items-center space-x-4;
+            @apply flex justify-center items-center space-x-4;
         }
         & .submit-btn {
             @apply px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-auto;
@@ -390,7 +390,6 @@
         }
     }
 }
-
 
 
 .integrantes{
@@ -412,10 +411,10 @@
 }
 
 .rodape{
-    @apply bg-customGreen h-[200px] flex flex-auto items-center justify-around;
+    @apply bg-customGreen flex flex-auto items-center justify-around py-6 lg:mt-32;
     
     & ul{
-        @apply text-white text-lg font-bold flex flex-col  md:flex-row;
+        @apply text-white text-lg font-bold flex flex-col md:flex-row;
     }
 }
 .info_integrantes{
@@ -432,9 +431,13 @@
     @apply md:text-5xl lg:text-6xl;
 }
 
+.integrantes-container__integrantes{
+    @apply flex flex-col md:flex-row mb-12 items-center gap-[0.5em] lg:gap-[1.5em] xl:gap-[9em] md:flex-wrap md:justify-evenly 
+}
+
 .integrantes-container {
-    @apply flex flex-col gap-[0.5em] mb-12 w-11/12 items-center;
-    @apply md:justify-evenly md:flex-row md:flex-wrap md:w-auto;
+    @apply flex flex-col gap-[0.5em] mb-12 items-center;
+    @apply md:justify-evenly md:flex-wrap md:w-auto;
     @apply lg:gap-[1.5em] xl:gap-[9em];
 }
 
@@ -456,12 +459,9 @@
 .github-icon {
     @apply w-16 mt-1.5 ml-2.5;
 }
-.rodape {
-    @apply bg-customGreen h-[200px] flex flex-row items-center justify-center p-4;
-}
 
 .text-footer {
-    @apply text-white font-bold text-xl ml-4 w-full max-w-[350px];
+    @apply text-white font-bold text-lg text-center w-full p-6;
 }
 
 .error-message {
@@ -469,13 +469,5 @@
     font-size: 12px;
     margin-top: 5px;
 }
-
-
-
-
-
-
-
-
 
 
