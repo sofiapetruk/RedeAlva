@@ -91,45 +91,49 @@ export default function EditArmazenamento({ params }: { params: { id: number } }
     };
 
     return (
-        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto">
-            <form onSubmit={handleSubmit} >
-                <h3 className="text-black text-center text-3xl">Editar Armazenamento</h3>
-
+        <div className="rounded-xl p-6 flex flex-col gap-4 m-auto items-center">
+            <h3 className="text-black text-center text-2xl md:text-3xl">Editar Armazenamento</h3>
+            <form onSubmit={handleSubmit} className="bg-customGreenLight rounded-xl flex flex-col items-center text-white w-full md:w-7/12 lg:w-4/12 xl:w-3/12">
                 <div>
-                    <label htmlFor="idCom">ID Comunidade</label>
-                    <input type="number" name="idComunidade" id="idCom" value={armazenamento.idComunidade} onChange={handleChange}
+                    <label htmlFor="idCom" className="text-lg m-2 text-wrap flex">ID Comunidade</label>
+                    <input type="number" name="idComunidade" id="idCom" className="rounded-lg" value={armazenamento.idComunidade} onChange={handleChange}
                     placeholder="digite o id da sua comunidade" required/>
                 </div>
 
                 <div>
-                    <label htmlFor="idUnidade">ID da Unidade</label>
-                    <input type="number" name="idUnidade" id="idUnidade" value={armazenamento.idUnidade} onChange={handleChange}
+                    <label htmlFor="idUnidade" className="text-lg m-2 text-wrap flex">ID da Unidade</label>
+                    <input type="number" name="idUnidade" id="idUnidade" className="rounded-lg" value={armazenamento.idUnidade} onChange={handleChange}
                         placeholder="digite o id da unidade que deseja transferir a energia" required/>
                 </div>
 
                 <div>
-                    <fieldset>
-                        <legend>Tipo de Transação</legend>
+                    <fieldset className="flex flex-col items-center justify-center">
+                        <legend className="text-lg m-2 text-wrap flex font-bold">Tipo de Transação</legend>
+                        <div className="flex gap-4">
+                            <div className="flex gap-4">
+                                <label htmlFor="idTransacaoVenda"> Doar </label>
+                                <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamento.tipoGeracao === "dar"} onChange={handleChange}/>
+                            </div>
 
-                        <label htmlFor="idTransacaoVenda"> dar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoVenda" value="dar" checked={armazenamento.tipoGeracao === "dar"} onChange={handleChange}/>
-
-                        <label htmlFor="idTransacaoCompra"> pegar </label>
-                        <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamento.tipoGeracao === "pegar"} onChange={handleChange} />
+                            <div className="flex gap-4">
+                                <label htmlFor="idTransacaoCompra"> Pegar </label>
+                                <input type="radio" name="tipoGeracao" id="idTransacaoCompra" value="pegar" checked={armazenamento.tipoGeracao === "pegar"} onChange={handleChange} />
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
 
                 <div>
-                    <label htmlFor="idQtd">Quantidade Energia</label>
-                    <input type="number" name="quantidade" id="idQtd" value={armazenamento.quantidade} onChange={handleChange}
+                    <label htmlFor="idQtd" className="text-lg m-2 text-wrap flex">Quantidade Energia</label>
+                    <input type="number" name="quantidade" id="idQtd" className="rounded-lg" value={armazenamento.quantidade} onChange={handleChange}
                         placeholder="digite a quantidade que irá ser trocada" required/>
                 </div>
 
-                    <div>
-                        <button type="submit">Atualizar</button>
-                    </div>
-                </form>
-            </div>
+                <div>
+                    <button type="submit" className="px-8 py-2 bg-customGreenLight rounded-xl font-bold text-center m-2">Atualizar</button>
+                </div>
+            </form>
+        </div>
             
     );
 }
