@@ -1,7 +1,6 @@
 "use client";
 
 import { TipoComercio } from "@/types/types";
-
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
@@ -9,7 +8,7 @@ import { BiEdit } from "react-icons/bi";
 
 
 export default function Comercios() {
-    const navigate = useRouter();
+
 
     const [comercios, setComercios] = useState<TipoComercio[]>([]); 
 
