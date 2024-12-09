@@ -37,9 +37,6 @@ https://github.com/Carlos-Eduardo-Rabelo/RedeAlva.git
 ## Link do repositório de Java
 https://github.com/sofiapetruk/greenenergy.git
 
-## Link do site
-https://challengeporto.vercel.app
-
 
 # Como Rodar o Código 🚀
 ## Clonando o Repositório
